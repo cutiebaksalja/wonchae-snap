@@ -111,6 +111,9 @@
             position: relative;
             max-width: 92vw;
             max-height: 92vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
         }
 
         .lightbox-img {
@@ -138,6 +141,59 @@
             line-height: 1;
             cursor: pointer;
             box-shadow: 0 6px 20px rgba(0,0,0,0.18);
+            z-index: 2;
+        }
+
+        .lightbox-nav {
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            width: 44px;
+            height: 44px;
+            border: none;
+            border-radius: 9999px;
+            background: rgba(255,255,255,0.92);
+            color: #333;
+            font-size: 24px;
+            line-height: 1;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            box-shadow: 0 6px 20px rgba(0,0,0,0.18);
+            z-index: 2;
+        }
+
+        .lightbox-prev {
+            left: -58px;
+        }
+
+        .lightbox-next {
+            right: -58px;
+        }
+
+        .footer-buttons {
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+        }
+
+        .footer-secondary-btn {
+            display: block;
+            width: 100%;
+            background: white;
+            color: var(--sage);
+            border: 1px solid #dfe6d8;
+            padding: 14px 0;
+            border-radius: 1rem;
+            font-weight: 700;
+            font-size: 14px;
+            text-decoration: none;
+            transition: all 0.2s ease;
+        }
+
+        .footer-secondary-btn:hover {
+            background: #f6f8f4;
         }
 
         @media (max-width: 640px) {
@@ -153,6 +209,20 @@
             .lightbox-close {
                 top: -10px;
                 right: -4px;
+            }
+
+            .lightbox-nav {
+                width: 40px;
+                height: 40px;
+                font-size: 22px;
+            }
+
+            .lightbox-prev {
+                left: 8px;
+            }
+
+            .lightbox-next {
+                right: 8px;
             }
         }
     </style>
@@ -177,7 +247,6 @@
             <div class="grid grid-cols-1 gap-2 text-center text-[12px] text-gray-600">
                 <div class="mini-card py-3">울산 전 지역 촬영</div>
                 <div class="mini-card py-3">색감 보정 원본 전체 제공</div>
-                <div class="mini-card py-3">자연스러움을 지향하는 스냅</div>
             </div>
         </div>
 
@@ -195,7 +264,6 @@
             <!-- Product -->
             <div id="product" class="tab-content active space-y-5">
 
-                <!-- 01 -->
                 <div class="soft-card p-5">
                     <div class="flex flex-col items-start gap-3 mb-2 sm:flex-row sm:items-center">
                         <h2 class="serif text-[17px] sm:text-[18px] font-bold text-gray-900">01. Picnic with Wonchae</h2>
@@ -215,7 +283,6 @@
                     </div>
                 </div>
 
-                <!-- 02 -->
                 <div class="soft-card p-5">
                     <h2 class="serif text-[18px] font-bold text-gray-900 mb-2">02. Walk with Wonchae</h2>
                     <p class="text-[13px] text-gray-500 mb-3">가족 야외스냅 · 1시간 ~ 1시간 30분</p>
@@ -230,7 +297,6 @@
                     </div>
                 </div>
 
-                <!-- 03 -->
                 <div class="soft-card p-5">
                     <h2 class="serif text-[18px] font-bold text-gray-900 mb-2">03. Home, Sweet Home</h2>
                     <p class="text-[13px] text-gray-500 mb-3">홈스냅 · 1시간 ~ 1시간 30분</p>
@@ -245,16 +311,15 @@
                     </div>
 
                     <div class="portfolio-grid">
-                        <img src="home1.jpg" alt="Home Sweet Home portfolio 1" onclick="openLightbox(this)">
-                        <img src="home2.jpg" alt="Home Sweet Home portfolio 2" onclick="openLightbox(this)">
-                        <img src="home3.jpg" alt="Home Sweet Home portfolio 3" onclick="openLightbox(this)">
+                        <img src="home1.jpg" alt="Home Sweet Home portfolio 1" onclick="openLightbox('home', 0)">
+                        <img src="home2.jpg" alt="Home Sweet Home portfolio 2" onclick="openLightbox('home', 1)">
+                        <img src="home3.jpg" alt="Home Sweet Home portfolio 3" onclick="openLightbox('home', 2)">
                     </div>
                 </div>
 
-                <!-- 04 -->
                 <div class="soft-card p-5">
                     <h2 class="serif text-[18px] font-bold text-gray-900 mb-2">04. Home, Sweet Baby</h2>
-                    <p class="text-[13px] text-gray-500 mb-3">50일 / 100일 아기와 가족 · 홈 촬영 60분</p>
+                    <p class="text-[13px] text-gray-500 mb-3">50일 / 100일 아기 · 홈 촬영 60분</p>
                     <p class="text-[12px] leading-relaxed text-gray-600 mb-4">
                         가장 작고 가장 빠르게 지나가는 시간을 기록합니다.
                         손의 크기, 눈의 떨림, 처음 세상을 바라보는 얼굴까지
@@ -268,9 +333,9 @@
                     </div>
 
                     <div class="portfolio-grid">
-                        <img src="baby1.jpg" alt="Home Sweet Baby portfolio 1" onclick="openLightbox(this)">
-                        <img src="baby2.jpg" alt="Home Sweet Baby portfolio 2" onclick="openLightbox(this)">
-                        <img src="baby3.jpg" alt="Home Sweet Baby portfolio 3" onclick="openLightbox(this)">
+                        <img src="baby1.jpg" alt="Home Sweet Baby portfolio 1" onclick="openLightbox('baby', 0)">
+                        <img src="baby2.jpg" alt="Home Sweet Baby portfolio 2" onclick="openLightbox('baby', 1)">
+                        <img src="baby3.jpg" alt="Home Sweet Baby portfolio 3" onclick="openLightbox('baby', 2)">
                     </div>
                 </div>
 
@@ -411,10 +476,17 @@
                 촬영 일정은 선착순으로 마감됩니다
             </p>
 
-            <a href="https://hoxy-ai.com/reservation/vtqzX4" target="_blank"
-               class="block w-full bg-[var(--sage)] hover:bg-[var(--sage-dark)] text-white py-4 rounded-2xl font-bold text-[14px] shadow-lg transition-all duration-200">
-                예약하기
-            </a>
+            <div class="footer-buttons">
+                <a href="https://hoxy-ai.com/reservation/vtqzX4" target="_blank"
+                   class="block w-full bg-[var(--sage)] hover:bg-[var(--sage-dark)] text-white py-4 rounded-2xl font-bold text-[14px] shadow-lg transition-all duration-200">
+                    예약하기
+                </a>
+
+                <a href="https://www.instagram.com/itswonchae/" target="_blank"
+                   class="footer-secondary-btn">
+                    인스타그램 바로가기
+                </a>
+            </div>
         </div>
     </div>
 
@@ -422,11 +494,21 @@
     <div id="lightbox" class="lightbox" onclick="closeLightbox(event)">
         <div class="lightbox-inner">
             <button class="lightbox-close" onclick="closeLightbox(event)" aria-label="닫기">×</button>
+            <button class="lightbox-nav lightbox-prev" onclick="showPrevImage(event)" aria-label="이전 이미지">‹</button>
             <img id="lightboxImage" class="lightbox-img" src="" alt="">
+            <button class="lightbox-nav lightbox-next" onclick="showNextImage(event)" aria-label="다음 이미지">›</button>
         </div>
     </div>
 
     <script>
+        const galleries = {
+            home: ['home1.jpg', 'home2.jpg', 'home3.jpg'],
+            baby: ['baby1.jpg', 'baby2.jpg', 'baby3.jpg']
+        };
+
+        let currentGallery = null;
+        let currentIndex = 0;
+
         function showTab(tabId) {
             document.querySelectorAll('.tab-content').forEach(tab => tab.classList.remove('active'));
             document.querySelectorAll('nav button').forEach(btn => btn.classList.remove('nav-active'));
@@ -449,13 +531,36 @@
             `;
         }
 
-        function openLightbox(img) {
+        function openLightbox(galleryName, index) {
+            currentGallery = galleryName;
+            currentIndex = index;
+            updateLightboxImage();
+
             const lightbox = document.getElementById('lightbox');
-            const lightboxImage = document.getElementById('lightboxImage');
-            lightboxImage.src = img.src;
-            lightboxImage.alt = img.alt || '';
             lightbox.classList.add('active');
             document.body.style.overflow = 'hidden';
+        }
+
+        function updateLightboxImage() {
+            const lightboxImage = document.getElementById('lightboxImage');
+            lightboxImage.src = galleries[currentGallery][currentIndex];
+            lightboxImage.alt = `${currentGallery} image ${currentIndex + 1}`;
+        }
+
+        function showPrevImage(event) {
+            event.stopPropagation();
+            if (!currentGallery) return;
+            const images = galleries[currentGallery];
+            currentIndex = (currentIndex - 1 + images.length) % images.length;
+            updateLightboxImage();
+        }
+
+        function showNextImage(event) {
+            event.stopPropagation();
+            if (!currentGallery) return;
+            const images = galleries[currentGallery];
+            currentIndex = (currentIndex + 1) % images.length;
+            updateLightboxImage();
         }
 
         function closeLightbox(event) {
@@ -470,10 +575,23 @@
         }
 
         document.addEventListener('keydown', function(event) {
-            if (event.key === 'Escape') {
-                document.getElementById('lightbox').classList.remove('active');
+            const lightbox = document.getElementById('lightbox');
+            const isOpen = lightbox.classList.contains('active');
+
+            if (event.key === 'Escape' && isOpen) {
+                lightbox.classList.remove('active');
                 document.getElementById('lightboxImage').src = '';
                 document.body.style.overflow = '';
+            }
+
+            if (event.key === 'ArrowLeft' && isOpen) {
+                currentIndex = (currentIndex - 1 + galleries[currentGallery].length) % galleries[currentGallery].length;
+                updateLightboxImage();
+            }
+
+            if (event.key === 'ArrowRight' && isOpen) {
+                currentIndex = (currentIndex + 1) % galleries[currentGallery].length;
+                updateLightboxImage();
             }
         });
     </script>
