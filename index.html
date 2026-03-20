@@ -343,17 +343,17 @@
     <head>
     
 <!-- Open Graph (카톡 / 인스타 미리보기) -->
+<!-- Open Graph (카톡 / 인스타 미리보기) -->
 <meta property="og:type" content="website">
 <meta property="og:title" content="원채스냅 | 아이의 본래 색을 기록합니다">
 <meta property="og:description" content="울산 아기 · 가족 스냅 | 자연스러운 순간을 담는 감성 스냅">
-<meta property="og:image" content="https://wonchae-snap.vercel.app/og.jpg">
-<meta property="og:url" content="https://wonchae-snap.vercel.app/">
+<meta property="og:image" content="https://wonchaesnap.com/og.jpg">
+<meta property="og:url" content="https://wonchaesnap.com/">
 
-<!-- 추가 (추천) -->
 <meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:title" content="원채스냅 | 아이의 본래 색을 기록합니다">
 <meta name="twitter:description" content="울산 아기 · 가족 스냅 | 자연스러운 순간을 담는 감성 스냅">
-<meta name="twitter:image" content="https://wonchae-snap.vercel.app/og.jpg">
+<meta name="twitter:image" content="https://wonchaesnap.com/og.jpg">
 </head>
 <body class="p-4 md:p-8 flex justify-center items-start min-h-screen">
     <div class="max-w-md w-full bg-white shadow-2xl rounded-[2rem] overflow-hidden border border-[#efede8]">
@@ -460,11 +460,12 @@
                     <div class="portfolio-slider-wrap">
                         <button class="slider-arrow left" onclick="scrollSlider(this, -1)" aria-label="이전 사진">‹</button>
                         <div class="portfolio-slider" data-gallery="home">
-                            <img src="home1.jpg" alt="Home Sweet Home portfolio 1" onclick="openLightbox('home', 0)">
-                            <img src="home2.jpg" alt="Home Sweet Home portfolio 2" onclick="openLightbox('home', 1)">
-                            <img src="home3.jpg" alt="Home Sweet Home portfolio 3" onclick="openLightbox('home', 2)">
-                            <img src="home4.jpg" alt="Home Sweet Home portfolio 4" onclick="openLightbox('home', 3)">
-                        </div>
+    <img src="home1.jpg" onclick="openLightbox('home', 0)">
+    <img src="home2.jpg" onclick="openLightbox('home', 1)">
+    <img src="home3.jpg" onclick="openLightbox('home', 2)">
+    <img src="home4.jpg" onclick="openLightbox('home', 3)">
+    <img src="home5.jpg" onclick="openLightbox('home', 4)"> <!-- 추가 -->
+</div>
                         <button class="slider-arrow right" onclick="scrollSlider(this, 1)" aria-label="다음 사진">›</button>
                     </div>
                 </div>
@@ -490,11 +491,13 @@
                     <div class="portfolio-slider-wrap">
                         <button class="slider-arrow left" onclick="scrollSlider(this, -1)" aria-label="이전 사진">‹</button>
                         <div class="portfolio-slider" data-gallery="baby">
-                            <img src="baby1.jpg" alt="Home Sweet Baby portfolio 1" onclick="openLightbox('baby', 0)">
-                            <img src="baby2.jpg" alt="Home Sweet Baby portfolio 2" onclick="openLightbox('baby', 1)">
-                            <img src="baby3.jpg" alt="Home Sweet Baby portfolio 3" onclick="openLightbox('baby', 2)">
-                            <img src="baby4.jpg" alt="Home Sweet Baby portfolio 4" onclick="openLightbox('baby', 3)">
-                        </div>
+    <img src="baby1.jpg" onclick="openLightbox('baby', 0)">
+    <img src="baby2.jpg" onclick="openLightbox('baby', 1)">
+    <img src="baby3.jpg" onclick="openLightbox('baby', 2)">
+    <img src="baby4.jpg" onclick="openLightbox('baby', 3)">
+    <img src="baby5.jpg" onclick="openLightbox('baby', 4)"> <!-- 추가 -->
+    <img src="baby6.jpg" onclick="openLightbox('baby', 5)"> <!-- 추가 -->
+</div>
                         <button class="slider-arrow right" onclick="scrollSlider(this, 1)" aria-label="다음 사진">›</button>
                     </div>
                 </div>
@@ -684,9 +687,22 @@
 
     <script>
         const galleries = {
-            home: ['home1.jpg', 'home2.jpg', 'home3.jpg', 'home4.jpg'],
-            baby: ['baby1.jpg', 'baby2.jpg', 'baby3.jpg', 'baby4.jpg']
-        };
+    home: [
+        'home1.jpg',
+        'home2.jpg',
+        'home3.jpg',
+        'home4.jpg',
+        'home5.jpg'   // 추가
+    ],
+    baby: [
+        'baby1.jpg',
+        'baby2.jpg',
+        'baby3.jpg',
+        'baby4.jpg',
+        'baby5.jpg',  // 추가
+        'baby6.jpg'   // 추가
+    ]
+};
 
         let currentGallery = null;
         let currentIndex = 0;
