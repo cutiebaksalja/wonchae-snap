@@ -8,13 +8,13 @@
     <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@300;400;500;700;800&family=Playfair+Display:ital,wght@0,400;0,700;1,400&display=swap" rel="stylesheet">
     <style>
         :root {
-    --sage: #9CAF88;
-    --sage-dark: #879A74;
-    --sage-light: #F1F6EC;
-    --ink: #4B4B4B;
-    --paper: #FCFBF8;
-    --line: #ECE9E2;
-}
+            --sage: #9CAF88;
+            --sage-dark: #879A74;
+            --sage-light: #F1F6EC;
+            --ink: #4B4B4B;
+            --paper: #FCFBF8;
+            --line: #ECE9E2;
+        }
 
         body {
             font-family: 'Noto Sans KR', sans-serif;
@@ -47,10 +47,22 @@
         }
 
         .nav-active {
-            border-bottom: 2px solid var(--sage);
+            border-bottom: none;
             color: var(--sage);
             font-weight: 800;
+            background: var(--sage-light);
+        }
+
+        nav button {
+            color: #9ca3af;
+        }
+
+        nav button:hover {
             background: #fafaf7;
+        }
+
+        nav button:active {
+            transform: scale(0.97);
         }
 
         .soft-card {
@@ -67,7 +79,7 @@
         }
 
         .logo-olive {
-            filter: invert(57%) sepia(10%) saturate(516%) hue-rotate(52deg) brightness(93%) contrast(89%);
+            filter: invert(64%) sepia(14%) saturate(574%) hue-rotate(48deg) brightness(91%) contrast(85%);
         }
 
         .portfolio-slider-wrap {
@@ -338,7 +350,7 @@
                 <img src="6.png" alt="Wonchae Snap" class="w-full h-full object-contain brightness-0 invert" onerror="handleLogoError(this, 'white')">
             </div>
 
-            <p class="text-[10px] uppercase tracking-[0.38em] font-light opacity-80 mt-1">Kids & Family Photography</p>
+            <p class="text-[10px] uppercase tracking-[0.38em] font-light opacity-80 mt-1">KIDS & FAMILY PHOTOGRAPHY</p>
             <div class="mt-5 text-center leading-relaxed">
                 <p class="text-[11px] tracking-[0.35em] opacity-70 font-light">
                     <span class="serif font-bold">元</span> 본래의 /
@@ -360,11 +372,19 @@
         </div>
 
         <!-- Navigation -->
-        <nav class="flex justify-around border-b border-[#efede8] text-[12px] text-gray-400 bg-white sticky top-0 z-10">
-            <button onclick="showTab('product')" id="btn-product" class="py-4 px-2 nav-active">PRODUCT</button>
-            <button onclick="showTab('process')" id="btn-process" class="py-4 px-2">PROCESS</button>
-            <button onclick="showTab('policy')" id="btn-policy" class="py-4 px-2">POLICY</button>
-            <button onclick="showTab('edit')" id="btn-edit" class="py-4 px-2">EDIT</button>
+        <nav class="grid grid-cols-4 gap-2 p-2 border-b border-[#efede8] text-[12px] bg-white sticky top-0 z-10">
+            <button onclick="showTab('product')" id="btn-product" class="py-3 px-2 rounded-2xl transition-all duration-200 nav-active">
+                PRODUCT
+            </button>
+            <button onclick="showTab('process')" id="btn-process" class="py-3 px-2 rounded-2xl transition-all duration-200">
+                PROCESS
+            </button>
+            <button onclick="showTab('policy')" id="btn-policy" class="py-3 px-2 rounded-2xl transition-all duration-200">
+                POLICY
+            </button>
+            <button onclick="showTab('edit')" id="btn-edit" class="py-3 px-2 rounded-2xl transition-all duration-200">
+                EDIT
+            </button>
         </nav>
 
         <!-- Content -->
@@ -541,7 +561,8 @@
                     <div class="text-[12px] space-y-2 text-gray-600">
                         <p>• 예약금 50,000원 입금 순으로 예약이 확정됩니다.</p>
                         <p>• 촬영일 10일 전까지 취소 시 예약금 전액 환불 가능합니다.</p>
-                        <p>• 촬영일 9일 전부터 당일까지 취소 시 예약금 환불 불가합니다.</p>
+                        <p>• 촬영일 9일 전부터 4일 전까지 취소 시 예약금 50% 환불 가능합니다.</p>
+                        <p>• 촬영일 3일 전부터 당일까지 취소 시 예약금 환불 불가합니다.</p>
                     </div>
                 </div>
 
@@ -665,7 +686,7 @@
 
         function handleLogoError(img, colorType) {
             const container = img.parentElement;
-            let iconColor = colorType === 'white' ? 'rgba(255,255,255,0.65)' : '#7f8f79';
+            let iconColor = colorType === 'white' ? 'rgba(255,255,255,0.65)' : '#9CAF88';
             let bgClass = colorType === 'white' ? '' : 'bg-[var(--sage-light)] rounded-full';
 
             container.innerHTML = `
