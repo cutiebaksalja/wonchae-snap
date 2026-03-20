@@ -49,7 +49,8 @@
         .nav-active {
             border-bottom: 2px solid var(--sage);
             color: var(--sage);
-            font-weight: 700;
+            font-weight: 800;
+            background: #fafaf7;
         }
 
         .soft-card {
@@ -246,6 +247,42 @@
             background: #f6f8f4;
         }
 
+        .product-header {
+            display: flex;
+            flex-direction: column;
+            align-items: flex-start;
+            gap: 10px;
+            margin-bottom: 10px;
+        }
+
+        .product-badge {
+            display: inline-flex;
+            width: fit-content;
+            background: var(--sage-light);
+            color: var(--sage);
+            font-size: 10px;
+            padding: 6px 12px;
+            border-radius: 9999px;
+            font-weight: 700;
+            line-height: 1;
+            letter-spacing: 0.04em;
+        }
+
+        .price-line {
+            padding-top: 4px;
+            font-size: 13px;
+            font-weight: 800;
+            color: var(--sage);
+        }
+
+        @media (min-width: 640px) {
+            .product-header {
+                flex-direction: row;
+                align-items: center;
+                justify-content: space-between;
+            }
+        }
+
         @media (max-width: 640px) {
             .portfolio-slider {
                 gap: 8px;
@@ -264,11 +301,11 @@
             }
 
             .slider-arrow.left {
-                left: -6px;
+                left: 6px;
             }
 
             .slider-arrow.right {
-                right: -6px;
+                right: 6px;
             }
 
             .lightbox-close {
@@ -296,13 +333,13 @@
     <div class="max-w-md w-full bg-white shadow-2xl rounded-[2rem] overflow-hidden border border-[#efede8]">
 
         <!-- Header -->
-        <div class="bg-[var(--sage)] px-8 pt-10 pb-8 text-center text-white flex flex-col items-center">
-            <div class="w-36 h-36 mb-4 flex items-center justify-center rounded-full overflow-hidden bg-white/10 backdrop-blur-sm">
+        <div class="bg-[var(--sage)] px-8 pt-8 pb-7 text-center text-white flex flex-col items-center">
+            <div class="w-28 h-28 mb-4 flex items-center justify-center rounded-full overflow-hidden bg-white/10 backdrop-blur-sm">
                 <img src="6.png" alt="Wonchae Snap" class="w-full h-full object-contain brightness-0 invert" onerror="handleLogoError(this, 'white')">
             </div>
 
             <p class="text-[10px] uppercase tracking-[0.38em] font-light opacity-80 mt-1">Kids & Family Photography</p>
-            <div class="mt-6 text-center leading-relaxed">
+            <div class="mt-5 text-center leading-relaxed">
                 <p class="text-[11px] tracking-[0.35em] opacity-70 font-light">
                     <span class="serif font-bold">元</span> 본래의 /
                     <span class="serif font-bold">彩</span> 색
@@ -315,9 +352,10 @@
 
         <!-- Quick Summary -->
         <div class="px-6 py-5 bg-[#fafaf7] border-b border-[#efede8]">
-            <div class="grid grid-cols-1 gap-2 text-center text-[12px] text-gray-600">
+            <div class="grid grid-cols-3 gap-2 text-center text-[11px] text-gray-600">
                 <div class="mini-card py-3">울산 전 지역 촬영</div>
                 <div class="mini-card py-3">원본 전체 제공</div>
+                <div class="mini-card py-3">3일 이내 원본 전달</div>
             </div>
         </div>
 
@@ -336,11 +374,9 @@
             <div id="product" class="tab-content active space-y-5">
 
                 <div class="soft-card p-5">
-                    <div class="flex flex-col items-start gap-3 mb-2 sm:flex-row sm:items-center">
+                    <div class="product-header">
                         <h2 class="serif text-[17px] sm:text-[18px] font-bold text-gray-900">01. Picnic with Wonchae</h2>
-                        <span class="inline-flex w-fit bg-[var(--sage-light)] text-[var(--sage)] text-[10px] px-3 py-1.5 rounded-full font-bold leading-none">
-                            KIDS ONLY
-                        </span>
+                        <span class="product-badge">KIDS ONLY</span>
                     </div>
                     <p class="text-[13px] text-gray-500 mb-3">소풍 스냅 · 야외 60분</p>
                     <p class="text-[12px] leading-relaxed text-gray-600 mb-4">
@@ -350,12 +386,15 @@
                     <div class="mini-card p-4 text-[11px] space-y-1.5">
                         <p><span class="font-bold text-[var(--sage)]">대상</span> 아이 단독 촬영</p>
                         <p><span class="font-bold text-[var(--sage)]">제공</span> 원본 전체 제공 + 보정본 8장</p>
-                        <p><span class="font-bold text-[var(--sage)]">금액</span> 130,000원</p>
+                        <p class="price-line">130,000원</p>
                     </div>
                 </div>
 
                 <div class="soft-card p-5">
-                    <h2 class="serif text-[18px] font-bold text-gray-900 mb-2">02. Walk with Wonchae</h2>
+                    <div class="product-header">
+                        <h2 class="serif text-[18px] font-bold text-gray-900">02. Walk with Wonchae</h2>
+                        <span class="product-badge">FAMILY OUTDOOR</span>
+                    </div>
                     <p class="text-[13px] text-gray-500 mb-3">가족 야외스냅 · 1시간 ~ 1시간 30분</p>
                     <p class="text-[12px] leading-relaxed text-gray-600 mb-4">
                         공원을 산책하고 머무는 흐름 안에서 아이와 가족이 함께하는
@@ -364,12 +403,15 @@
                     <div class="mini-card p-4 text-[11px] space-y-1.5">
                         <p><span class="font-bold text-[var(--sage)]">대상</span> 아이 및 가족</p>
                         <p><span class="font-bold text-[var(--sage)]">제공</span> 원본 전체 제공 + 보정본 15장</p>
-                        <p><span class="font-bold text-[var(--sage)]">금액</span> 180,000원</p>
+                        <p class="price-line">180,000원</p>
                     </div>
                 </div>
 
                 <div class="soft-card p-5">
-                    <h2 class="serif text-[18px] font-bold text-gray-900 mb-2">03. Home, Sweet Home</h2>
+                    <div class="product-header">
+                        <h2 class="serif text-[18px] font-bold text-gray-900">03. Home, Sweet Home</h2>
+                        <span class="product-badge">HOME SNAP</span>
+                    </div>
                     <p class="text-[13px] text-gray-500 mb-3">홈스냅 · 1시간 ~ 1시간 30분</p>
                     <p class="text-[12px] leading-relaxed text-gray-600 mb-4">
                         아이에게 가장 익숙한 공간인 집에서 자연광을 활용해
@@ -378,7 +420,7 @@
                     <div class="mini-card p-4 text-[11px] space-y-1.5">
                         <p><span class="font-bold text-[var(--sage)]">대상</span> 아이 및 가족</p>
                         <p><span class="font-bold text-[var(--sage)]">제공</span> 원본 전체 제공 + 보정본 12장</p>
-                        <p><span class="font-bold text-[var(--sage)]">금액</span> 150,000원</p>
+                        <p class="price-line">150,000원</p>
                     </div>
 
                     <div class="portfolio-slider-wrap">
@@ -394,7 +436,10 @@
                 </div>
 
                 <div class="soft-card p-5">
-                    <h2 class="serif text-[18px] font-bold text-gray-900 mb-2">04. Home, Sweet Baby</h2>
+                    <div class="product-header">
+                        <h2 class="serif text-[18px] font-bold text-gray-900">04. Home, Sweet Baby</h2>
+                        <span class="product-badge">BABY SPECIAL</span>
+                    </div>
                     <p class="text-[13px] text-gray-500 mb-3">아기의 특별한 날을 기록하고 싶은 가족 · 홈 촬영 60분</p>
                     <p class="text-[12px] leading-relaxed text-gray-600 mb-4">
                         가장 작고 가장 빠르게 지나가는 시간을 기록합니다.
@@ -405,7 +450,7 @@
                         <p><span class="font-bold text-[var(--sage)]">대상</span> 아기의 특별한 날을 기록하고 싶은 가족</p>
                         <p><span class="font-bold text-[var(--sage)]">제공</span> 원본 전체 제공 + 보정본 10장</p>
                         <p><span class="font-bold text-[var(--sage)]">구성</span> 기념 포스터 1종 포함 (디지털 파일)</p>
-                        <p><span class="font-bold text-[var(--sage)]">금액</span> 180,000원</p>
+                        <p class="price-line">180,000원</p>
                     </div>
 
                     <div class="portfolio-slider-wrap">
@@ -426,10 +471,8 @@
                     <p>• 울산 외 지역은 DM 별도 문의</p>
                 </div>
 
-                <!-- Divider -->
                 <div class="my-6 border-t border-[#ece9e2]"></div>
 
-                <!-- Baby Care Section -->
                 <div class="text-center px-4 pb-2">
                     <p class="text-[11px] tracking-[0.28em] uppercase text-[var(--sage)] font-bold mb-3">
                         For Baby, With Care
@@ -472,7 +515,7 @@
                     <div>
                         <h3 class="font-bold text-[14px] mb-1">Photo Data</h3>
                         <p class="text-[12px] text-gray-600 leading-relaxed">
-                            눈 감거나 초점이 안맞은 컷을 제외한 원본 전체는 JPG로 <strong class="text-[var(--sage)]">3일 이내</strong> 전달드립니다.
+                            눈 감거나 초점이 맞지 않은 컷을 제외한 원본 전체는 JPG로 <strong class="text-[var(--sage)]">3일 이내</strong> 전달드립니다.
                         </p>
                     </div>
                 </div>
@@ -523,8 +566,8 @@
 
             <!-- Edit -->
             <div id="edit" class="tab-content">
-                <div class="flex justify-center mb-7">
-                    <img src="6.png" alt="Wonchae Snap Logo" class="w-40 h-40 object-contain logo-olive">
+                <div class="flex justify-center mb-5">
+                    <img src="6.png" alt="Wonchae Snap Logo" class="w-28 h-28 object-contain logo-olive">
                 </div>
 
                 <div class="text-center mb-5">
@@ -576,8 +619,8 @@
 
         <!-- Footer -->
         <div class="bg-[#fafaf7] p-6 px-8 text-center border-t border-[#efede8]">
-            <p class="text-center text-[12px] text-[var(--sage)] font-bold mb-3">
-                촬영 일정은 선착순으로 마감됩니다.
+            <p class="text-center text-[12px] text-[var(--sage)] font-bold mb-3 leading-relaxed">
+                아기의 컨디션과 계절감을 고려해 여유 있게 예약해주세요.
             </p>
 
             <div class="footer-buttons">
