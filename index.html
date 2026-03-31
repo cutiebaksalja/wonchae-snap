@@ -4,21 +4,15 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Wonchae Snap</title>
-
     <meta property="og:type" content="website">
     <meta property="og:title" content="원채스냅 | 본래의 색을 기록합니다">
-    <meta property="og:description" content="울산 아기 · 가족 스냅 | 이 순간을 담는 감성 스냅">
+    <meta property="og:description" content="울산 아기·가족 스냅 | 이 순간을 담는 감성 스냅">
     <meta property="og:image" content="https://wonchaesnap.com/og.jpg">
     <meta property="og:url" content="https://wonchaesnap.com/">
-
-    <meta name="twitter:card" content="summary_large_image">
-    <meta name="twitter:title" content="원채스냅 | 본래의 색을 기록합니다">
-    <meta name="twitter:description" content="울산 아기 · 가족 스냅 | 이 순간을 담는 감성 스냅">
-    <meta name="twitter:image" content="https://wonchaesnap.com/og.jpg">
-
+    
     <script src="https://cdn.tailwindcss.com"></script>
     <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@300;400;500;700;800&family=Playfair+Display:wght@400;600;700&display=swap" rel="stylesheet">
-
+    
     <style>
         :root {
             --sage: #A3B296;
@@ -35,28 +29,16 @@
             --shadow: 0 14px 40px rgba(56, 67, 53, 0.06);
             --shadow-soft: 0 8px 24px rgba(56, 67, 53, 0.04);
         }
-
-        * {
-            box-sizing: border-box;
-        }
-
-        html {
-            scroll-behavior: smooth;
-        }
-
+        * { box-sizing: border-box; }
+        html { scroll-behavior: smooth; }
         body {
             margin: 0;
             font-family: 'Noto Sans KR', sans-serif;
-            background:
-                radial-gradient(circle at top left, rgba(163,178,150,0.10), transparent 26%),
-                linear-gradient(180deg, #FCFBF8 0%, #F8F8F3 100%);
+            background: radial-gradient(circle at top left, rgba(163,178,150,0.10), transparent 26%),
+                        linear-gradient(180deg, #FCFBF8 0%, #F8F8F3 100%);
             color: var(--ink);
         }
-
-        .serif {
-            font-family: 'Playfair Display', serif;
-        }
-
+        .serif { font-family: 'Playfair Display', serif; }
         .site-shell {
             width: 100%;
             max-width: 440px;
@@ -66,26 +48,15 @@
             border-radius: 2rem;
             overflow: hidden;
             box-shadow: 0 20px 60px rgba(73, 82, 66, 0.10);
+            margin: 0 auto;
         }
-
         .hero {
             position: relative;
-            background:
-                linear-gradient(180deg, rgba(255,255,255,0.04), rgba(255,255,255,0.01)),
-                linear-gradient(180deg, #A4B397 0%, #9DAD90 100%);
+            background: linear-gradient(180deg, #A4B397 0%, #9DAD90 100%);
             padding: 34px 32px 30px;
             text-align: center;
             color: white;
         }
-
-        .hero::after {
-            content: "";
-            position: absolute;
-            inset: auto 0 0 0;
-            height: 1px;
-            background: rgba(255,255,255,0.18);
-        }
-
         .hero-logo-wrap {
             width: 116px;
             height: 116px;
@@ -95,57 +66,14 @@
             align-items: center;
             justify-content: center;
             background: rgba(255,255,255,0.09);
-            box-shadow: inset 0 1px 0 rgba(255,255,255,0.10);
         }
-
-        .hero-kicker {
-            font-size: 10px;
-            letter-spacing: 0.34em;
-            font-weight: 300;
-            opacity: 0.88;
-            text-transform: uppercase;
-        }
-
-        .hero-copy {
-            margin-top: 18px;
-            line-height: 1.9;
-        }
-
-        .hero-copy .sub {
-            font-size: 11px;
-            letter-spacing: 0.30em;
-            font-weight: 300;
-            opacity: 0.76;
-        }
-
-        .hero-copy .main {
-            margin-top: 8px;
-            font-size: 13px;
-            font-weight: 600;
-            opacity: 0.98;
-        }
-
-        .summary-band {
-            padding: 15px 26px 16px;
-            background: rgba(255,255,255,0.82);
-            border-bottom: 1px solid var(--line);
-        }
-
-        .summary-line {
-            margin: 0;
-            text-align: center;
-            font-size: 11px;
-            line-height: 1.9;
-            color: var(--ink-soft);
-            font-weight: 500;
-            letter-spacing: 0.02em;
-        }
-
-        .summary-line strong {
-            color: var(--sage-dark);
-            font-weight: 700;
-        }
-
+        .hero-kicker { font-size: 10px; letter-spacing: 0.34em; font-weight: 300; text-transform: uppercase; }
+        .hero-copy.sub { font-size: 11px; letter-spacing: 0.30em; opacity: 0.76; }
+        .hero-copy.main { margin-top: 8px; font-size: 13px; font-weight: 600; }
+        
+        .summary-band { padding: 15px 26px 16px; background: rgba(255,255,255,0.82); border-bottom: 1px solid var(--line); }
+        .summary-line { text-align: center; font-size: 11px; color: var(--ink-soft); }
+        
         .tab-nav {
             display: grid;
             grid-template-columns: repeat(4, 1fr);
@@ -156,9 +84,7 @@
             position: sticky;
             top: 0;
             z-index: 10;
-            backdrop-filter: blur(8px);
         }
-
         .tab-nav button {
             border: none;
             background: transparent;
@@ -167,1159 +93,143 @@
             font-weight: 600;
             padding: 13px 10px;
             border-radius: 9999px;
-            transition: all 0.22s ease;
             cursor: pointer;
         }
-
-        .tab-nav button:hover {
-            background: #F7F9F5;
-            color: var(--sage-dark);
-        }
-
-        .tab-nav button:active {
-            transform: scale(0.98);
-        }
-
         .tab-nav .nav-active {
             background: var(--sage-light);
             color: var(--sage-dark);
             font-weight: 800;
-            box-shadow: inset 0 0 0 1px rgba(163,178,150,0.08);
         }
-
-        .content-wrap {
-            padding: 22px;
-            padding-bottom: 34px;
-        }
-
-.tab-content {
-    display: none;
-}
-
-.tab-content.active {
-    display: block;
-    animation: fadeIn 0.35s ease;
-}
-
-@keyframes fadeIn {
-    from {
-        opacity: 0;
-        transform: translateY(8px);
-    }
-    to {
-        opacity: 1;
-        transform: translateY(0);
-    }
-}
-        }
-
-        .soft-card {
-            background: rgba(255,255,255,0.94);
-            border: 1px solid var(--line);
-            border-radius: 1.7rem;
-            box-shadow: var(--shadow-soft);
-        }
-
-        .mini-card {
-            background: linear-gradient(180deg, #FEFEFD 0%, #FAFBF8 100%);
-            border: 1px solid var(--line);
-            border-radius: 1.25rem;
-        }
-
-        .section-gap {
-            display: flex;
-            flex-direction: column;
-            gap: 18px;
-        }
-
-        .product-card {
-            padding: 26px;
-        }
-
-        .product-header {
-            display: flex;
-            flex-direction: column;
-            align-items: flex-start;
-            gap: 10px;
-            margin-bottom: 10px;
-        }
-
-        .product-title {
-            margin: 0;
-            font-size: 17px;
-            line-height: 1.3;
-            color: #22282A;
-            font-weight: 700;
-            letter-spacing: -0.02em;
-        }
-
-        .product-badge {
-            display: inline-flex;
-            align-items: center;
-            width: fit-content;
-            min-height: 30px;
-            padding: 7px 14px;
-            border-radius: 9999px;
-            background: var(--sage-light);
-            color: var(--sage-dark);
-            font-size: 10px;
-            font-weight: 800;
-            line-height: 1;
-            letter-spacing: 0.05em;
-        }
-
-        .product-meta {
-            margin: 0 0 14px;
-            color: #7D847A;
-            font-size: 13px;
-            font-weight: 500;
-        }
-
-        .product-desc {
-            margin: 0 0 16px;
-            font-size: 12px;
-            line-height: 1.95;
-            color: #62695E;
-        }
-
-        .product-info {
-            padding: 16px 18px;
-            font-size: 11px;
-            line-height: 1.8;
-            color: #5F665A;
-        }
-
-        .product-info p {
-            margin: 0;
-        }
-
-        .product-info .label {
-            font-weight: 700;
-            color: var(--sage-dark);
-            margin-right: 4px;
-        }
-
-        .product-info .price-line {
-            padding-top: 6px;
-            font-size: 13px;
-            font-weight: 800;
-            color: var(--sage-dark);
-        }
-
-        .portfolio-slider-wrap {
-            position: relative;
-            margin-top: 16px;
-        }
-
-        .portfolio-slider {
-            display: flex;
-            gap: 10px;
-            overflow-x: auto;
-            scroll-behavior: smooth;
-            scroll-snap-type: x mandatory;
-            -ms-overflow-style: none;
-            scrollbar-width: none;
-            cursor: grab;
-            user-select: none;
-            padding: 2px 0;
-        }
-
-        .portfolio-slider::-webkit-scrollbar {
-            display: none;
-        }
-
-        .portfolio-slider.dragging {
-            cursor: grabbing;
-            scroll-behavior: auto;
-        }
-
-        .portfolio-slider img {
-            flex: 0 0 calc((100% - 20px) / 3);
-            width: calc((100% - 20px) / 3);
-            aspect-ratio: 1 / 1.15;
-            object-fit: cover;
-            border-radius: 14px;
-            display: block;
-            border: 1px solid var(--line);
-            cursor: zoom-in;
-            scroll-snap-align: start;
-            transition: transform 0.2s ease, box-shadow 0.2s ease;
-            background: #F3F4F0;
-        }
-
-        .portfolio-slider img:hover {
-            transform: translateY(-2px);
-            box-shadow: 0 10px 18px rgba(73,82,66,0.10);
-        }
-
-        .slider-arrow {
-            position: absolute;
-            top: 50%;
-            transform: translateY(-50%);
-            width: 36px;
-            height: 36px;
-            border: none;
-            border-radius: 9999px;
-            background: rgba(255,255,255,0.92);
-            color: #4A4E57;
-            font-size: 20px;
-            line-height: 1;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            box-shadow: 0 8px 18px rgba(0,0,0,0.10);
-            cursor: pointer;
-            z-index: 3;
-        }
-
-        .slider-arrow.left {
-            left: -8px;
-        }
-
-        .slider-arrow.right {
-            right: -8px;
-        }
-
-        .note-list {
-            padding: 2px 4px 0;
-            color: #798073;
-            font-size: 11px;
-            line-height: 1.8;
-        }
-
-        .note-list p {
-            margin: 0;
-        }
-
-        .divider {
-            height: 1px;
-            background: var(--line);
-            margin: 22px 0;
-        }
-
-        .care-section {
-            text-align: center;
-            padding: 0 6px 2px;
-        }
-
-        .care-kicker {
-            margin: 0 0 12px;
-            font-size: 11px;
-            letter-spacing: 0.26em;
-            text-transform: uppercase;
-            color: var(--sage-dark);
-            font-weight: 800;
-        }
-
-        .care-card {
-            padding: 22px 20px;
-            font-size: 12px;
-            line-height: 1.9;
-            color: #62695E;
-        }
-
-        .care-card strong {
-            color: #31362F;
-        }
-
-        .care-list {
-            margin: 4px 0 0;
-            font-size: 11px;
-            line-height: 1.9;
-        }
-
-        .step-card {
-            padding: 20px;
-            display: flex;
-            align-items: flex-start;
-            gap: 14px;
-        }
-
-        .step-no {
-            flex: 0 0 auto;
-            font-size: 22px;
-            font-weight: 800;
-            line-height: 1;
-            color: var(--sage-dark);
-        }
-
-        .step-title {
-            margin: 0 0 8px;
-            font-size: 14px;
-            font-weight: 700;
-            color: #2B302B;
-        }
-
-        .step-body {
-            font-size: 12px;
-            line-height: 1.9;
-            color: #62695E;
-        }
-
-        .step-body p {
-            margin: 0;
-        }
-
-        .step-body .em {
-            color: var(--sage-dark);
-            font-weight: 700;
-        }
-
-        .policy-card,
-        .edit-card {
-            padding: 22px;
-        }
-
-        .block-title {
-            margin: 0 0 12px;
-            font-size: 14px;
-            font-weight: 700;
-            color: var(--sage-dark);
-        }
-
-        .block-body {
-            font-size: 12px;
-            line-height: 1.95;
-            color: #62695E;
-        }
-
-        .block-body p,
-        .block-body li {
-            margin: 0;
-        }
-
-        .block-body ul {
-            margin: 0;
-            padding-left: 18px;
-        }
-
-        .edit-logo {
-            display: flex;
-            justify-content: center;
-            margin-bottom: 18px;
-        }
-
-        .logo-tint {
-            filter: invert(76%) sepia(8%) saturate(438%) hue-rotate(170deg) brightness(88%) contrast(86%);
-        }
-
-        .edit-heading {
-            text-align: center;
-            margin-bottom: 18px;
-        }
-
-        .edit-kicker {
-            margin: 0 0 8px;
-            font-size: 11px;
-            letter-spacing: 0.24em;
-            text-transform: uppercase;
-            color: var(--sage-dark);
-            font-weight: 800;
-        }
-
-        .edit-title {
-            margin: 0;
-            font-size: 24px;
-            line-height: 1.35;
-            letter-spacing: -0.03em;
-            color: #202526;
-            font-weight: 800;
-        }
-
-        .edit-card {
-            font-size: 12px;
-            line-height: 1.9;
-            color: #62695E;
-        }
-
-        .edit-card p {
-            margin: 0;
-        }
-
-        .edit-stack {
-            display: flex;
-            flex-direction: column;
-            gap: 14px;
-        }
-
-        .footer-wrap {
-            background: rgba(250,251,248,0.95);
-            padding: 24px 30px 28px;
-            text-align: center;
-            border-top: 1px solid var(--line);
-        }
-
-        .footer-text {
-            margin: 0 0 14px;
-            font-size: 12px;
-            line-height: 1.8;
-            color: var(--sage-dark);
-            font-weight: 700;
-        }
-
-        .footer-buttons {
-            display: flex;
-            flex-direction: column;
-            gap: 10px;
-        }
-
-        .footer-primary-btn {
-            display: block;
-            width: 100%;
-            background: var(--sage);
-            color: white;
-            border: none;
-            text-decoration: none;
-            padding: 15px 0;
-            border-radius: 1.15rem;
-            font-weight: 700;
-            font-size: 14px;
-            box-shadow: 0 12px 24px rgba(116,132,106,0.18);
-            transition: all 0.2s ease;
-        }
-
-        .footer-primary-btn:hover {
-            background: var(--sage-dark);
-            transform: translateY(-1px);
-        }
-
-        .footer-secondary-btn {
-            display: block;
-            width: 100%;
-            background: white;
-            color: var(--sage-dark);
-            border: 1px solid #DCE4D7;
-            text-decoration: none;
-            padding: 14px 0;
-            border-radius: 1.15rem;
-            font-weight: 700;
-            font-size: 14px;
-            transition: all 0.2s ease;
-        }
-
-        .footer-secondary-btn:hover {
-            background: #F7F9F4;
-        }
-
-        .lightbox {
-            position: fixed;
-            inset: 0;
-            background: rgba(20, 20, 20, 0.88);
-            display: none;
-            align-items: center;
-            justify-content: center;
-            padding: 20px;
-            z-index: 9999;
-        }
-
-        .lightbox.active {
-            display: flex;
-        }
-
-        .lightbox-inner {
-            position: relative;
-            max-width: 92vw;
-            max-height: 92vh;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-        }
-
-        .lightbox-img {
-            display: block;
-            max-width: 92vw;
-            max-height: 88vh;
-            width: auto;
-            height: auto;
-            object-fit: contain;
-            border-radius: 18px;
-            box-shadow: 0 18px 40px rgba(0,0,0,0.28);
-        }
-
-        .lightbox-close {
-            position: absolute;
-            top: -12px;
-            right: -12px;
-            width: 40px;
-            height: 40px;
-            border: none;
-            border-radius: 9999px;
-            background: white;
-            color: #333;
-            font-size: 22px;
-            line-height: 1;
-            cursor: pointer;
-            box-shadow: 0 6px 20px rgba(0,0,0,0.18);
-            z-index: 2;
-        }
-
-        .lightbox-nav {
-            position: absolute;
-            top: 50%;
-            transform: translateY(-50%);
-            width: 44px;
-            height: 44px;
-            border: none;
-            border-radius: 9999px;
-            background: rgba(255,255,255,0.92);
-            color: #333;
-            font-size: 24px;
-            line-height: 1;
-            cursor: pointer;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            box-shadow: 0 6px 20px rgba(0,0,0,0.18);
-            z-index: 2;
-        }
-
-        .lightbox-prev {
-            left: -58px;
-        }
-
-        .lightbox-next {
-            right: -58px;
-        }
-
-        @media (min-width: 640px) {
-            .product-header {
-                flex-direction: row;
-                align-items: center;
-                justify-content: space-between;
-            }
-
-            .product-title {
-                font-size: 18px;
-            }
-        }
-
-        @media (max-width: 640px) {
-            body {
-                padding: 16px;
-            }
-
-            .site-shell {
-                border-radius: 1.7rem;
-            }
-
-            .hero {
-                padding: 28px 24px 26px;
-            }
-
-            .hero-logo-wrap {
-                width: 108px;
-                height: 108px;
-            }
-
-            .content-wrap {
-                padding: 18px;
-                padding-bottom: 28px;
-            }
-
-            .product-card,
-            .policy-card,
-            .edit-card {
-                padding: 20px;
-            }
-
-            .portfolio-slider {
-                gap: 8px;
-            }
-
-            .portfolio-slider img {
-                flex: 0 0 calc((100% - 16px) / 3);
-                width: calc((100% - 16px) / 3);
-                border-radius: 12px;
-            }
-
-            .slider-arrow {
-                width: 32px;
-                height: 32px;
-                font-size: 18px;
-                background: rgba(255,255,255,0.95);
-            }
-
-            .slider-arrow.left {
-                left: 4px;
-            }
-
-            .slider-arrow.right {
-                right: 4px;
-            }
-
-            .lightbox-close {
-                top: -10px;
-                right: -4px;
-            }
-
-            .lightbox-nav {
-                width: 40px;
-                height: 40px;
-                font-size: 22px;
-            }
-
-            .lightbox-prev {
-                left: 8px;
-            }
-
-            .lightbox-next {
-                right: 8px;
-            }
-        }
+        
+        .content-wrap { padding: 22px; padding-bottom: 34px; }
+        .tab-content { display: none; }
+        .tab-content.active { display: block; animation: fadeIn 0.35s ease; }
+        
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(8px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        .soft-card { background: white; border: 1px solid var(--line); border-radius: 1.7rem; padding: 20px; margin-bottom: 18px; }
+        .product-badge { background: var(--sage-light); color: var(--sage-dark); font-size: 10px; padding: 4px 10px; border-radius: 9999px; font-weight: 800; }
+        .portfolio-slider { display: flex; gap: 10px; overflow-x: auto; scrollbar-width: none; }
+        .portfolio-slider img { width: 120px; height: 150px; object-fit: cover; border-radius: 12px; flex-shrink: 0; }
+        
+        .footer-wrap { background: #f8f8f3; padding: 24px; text-align: center; border-top: 1px solid var(--line); }
+        .footer-primary-btn { display: block; background: var(--sage); color: white; padding: 15px; border-radius: 1rem; text-decoration: none; font-weight: 700; margin-bottom: 10px; }
+        .footer-secondary-btn { display: block; border: 1px solid var(--line); padding: 15px; border-radius: 1rem; text-decoration: none; color: var(--sage-dark); font-weight: 700; }
     </style>
 </head>
+<body class="p-4 flex justify-center items-start min-h-screen">
 
-<body class="p-4 md:p-8 flex justify-center items-start min-h-screen">
-    <div class="site-shell">
-        <!-- Header -->
-        <div class="hero">
-            <div class="hero-logo-wrap">
-                <img src="6.png" alt="Wonchae Snap" class="w-full h-full object-contain brightness-0 invert" onerror="handleLogoError(this, 'white')">
+<div class="site-shell">
+    <!-- Header -->
+    <div class="hero">
+        <div class="hero-logo-wrap">
+            <img src="6.png" alt="Wonchae Snap" class="w-20 h-20 object-contain brightness-0 invert">
+        </div>
+        <p class="hero-kicker">KIDS & FAMILY PHOTOGRAPHY</p>
+        <div class="hero-copy">
+            <p class="sub"><span class="serif font-bold">元</span> 본래의 / <span class="serif font-bold">彩</span> 색</p>
+            <p class="main">본래의 색을 기록합니다</p>
+        </div>
+    </div>
+
+    <!-- Quick Summary -->
+    <div class="summary-band">
+        <p class="summary-line">울산 전 지역 촬영, <strong>원본 전체 3일 이내</strong> 전달</p>
+    </div>
+
+    <!-- Navigation -->
+    <nav class="tab-nav">
+        <button onclick="showTab('product')" id="btn-product" class="nav-active">PRODUCT</button>
+        <button onclick="showTab('process')" id="btn-process">PROCESS</button>
+        <button onclick="showTab('policy')" id="btn-policy">POLICY</button>
+        <button onclick="showTab('edit')" id="btn-edit">EDIT</button>
+    </nav>
+
+    <!-- Content -->
+    <div class="content-wrap">
+        <!-- Product Tab -->
+        <div id="product" class="tab-content active">
+            <div class="soft-card">
+                <div class="flex justify-between items-center mb-3">
+                    <h2 class="text-lg font-bold serif">01. Picnic with Wonchae</h2>
+                    <span class="product-badge">KIDS ONLY</span>
+                </div>
+                <p class="text-sm text-gray-600 mb-4">원채스냅만의 시그니처 소풍 세팅 야외 촬영 (60분)</p>
+                <div class="portfolio-slider">
+                    <img src="picnic1.jpg" alt="picnic">
+                    <img src="picnic2.jpg" alt="picnic">
+                    <img src="picnic3.jpg" alt="picnic">
+                </div>
             </div>
-
-            <p class="hero-kicker">KIDS &amp; FAMILY PHOTOGRAPHY</p>
-
-            <div class="hero-copy">
-                <p class="sub">
-                    <span class="serif font-bold">元</span> 본래의 /
-                    <span class="serif font-bold">彩</span> 색
-                </p>
-                <p class="main">본래의 색을 기록합니다</p>
+            
+            <div class="soft-card">
+                <h2 class="text-lg font-bold serif">02. Walk with Wonchae</h2>
+                <p class="text-sm text-gray-600">가족 야외스냅 1시간~1시간 30분</p>
             </div>
         </div>
 
-        <!-- Quick Summary -->
-        <div class="summary-band">
-            <p class="summary-line">
-                울산 전 지역에서 촬영하며, <strong>원본 전체</strong>는 <strong>3일 이내</strong> 전달드립니다.
-            </p>
-        </div>
-
-        <!-- Navigation -->
-        <nav class="tab-nav">
-            <button onclick="showTab('product')" id="btn-product" class="nav-active">PRODUCT</button>
-            <button onclick="showTab('process')" id="btn-process">PROCESS</button>
-            <button onclick="showTab('policy')" id="btn-policy">POLICY</button>
-            <button onclick="showTab('edit')" id="btn-edit">EDIT</button>
-        </nav>
-
-        <!-- Content -->
-        <div class="content-wrap">
-            <!-- Product -->
-            <div id="product" class="tab-content active section-gap">
-                <div class="soft-card product-card">
-                    <div class="product-header">
-                        <h2 class="product-title serif">01. Picnic with Wonchae</h2>
-                        <span class="product-badge">KIDS ONLY</span>
-                    </div>
-
-                    <p class="product-meta">소풍 스냅 · 야외 60분</p>
-
-                    <p class="product-desc">
-                        원채스냅만의 시그니처 소풍 세팅에서 진행되는 아이 전용 촬영입니다.
-                        아이가 공간에 적응하며 자연스럽게 웃고 움직이는 순간을 담습니다.
-                    </p>
-
-                    <div class="mini-card product-info">
-                        <p><span class="label">대상</span>아이 단독 촬영</p>
-                        <p><span class="label">제공</span>원본 전체 제공 + 보정본 8장</p>
-                        <p class="price-line">130,000원</p>
-                    </div>
-
-                    <div class="portfolio-slider-wrap">
-                        <button class="slider-arrow left" onclick="scrollSlider(this, -1)" aria-label="이전 사진">‹</button>
-                        <div class="portfolio-slider" data-gallery="picnic">
-                            <img src="picnic1.jpg" alt="Picnic with Wonchae portfolio 1" onclick="openLightbox('picnic', 0)">
-                            <img src="picnic2.jpg" alt="Picnic with Wonchae portfolio 2" onclick="openLightbox('picnic', 1)">
-                            <img src="picnic3.jpg" alt="Picnic with Wonchae portfolio 3" onclick="openLightbox('picnic', 2)">
-                            <img src="picnic4.jpg" alt="Picnic with Wonchae portfolio 4" onclick="openLightbox('picnic', 3)">
-                            <img src="picnic5.jpg" alt="Picnic with Wonchae portfolio 5" onclick="openLightbox('picnic', 4)">
-                            <img src="picnic6.jpg" alt="Picnic with Wonchae portfolio 6" onclick="openLightbox('picnic', 5)">
-                        </div>
-                        <button class="slider-arrow right" onclick="scrollSlider(this, 1)" aria-label="다음 사진">›</button>
-                    </div>
-                </div>
-
-                <div class="soft-card product-card">
-                    <div class="product-header">
-                        <h2 class="product-title serif">02. Walk with Wonchae</h2>
-                        <span class="product-badge">FAMILY OUTDOOR</span>
-                    </div>
-
-                    <p class="product-meta">가족 야외스냅 · 1시간 ~ 1시간 30분</p>
-
-                    <p class="product-desc">
-                        공원을 산책하고 머무는 흐름 안에서 아이와 가족이 함께하는
-                        자연스러운 장면을 기록하는 대표 상품입니다.
-                    </p>
-
-                    <div class="mini-card product-info">
-                        <p><span class="label">대상</span>아이 및 가족</p>
-                        <p><span class="label">제공</span>원본 전체 제공 + 보정본 15장</p>
-                        <p class="price-line">180,000원</p>
-                    </div>
-                </div>
-
-                <div class="soft-card product-card">
-                    <div class="product-header">
-                        <h2 class="product-title serif">03. Home, Sweet Home</h2>
-                        <span class="product-badge">HOME SNAP</span>
-                    </div>
-
-                    <p class="product-meta">홈스냅 · 1시간 ~ 1시간 30분</p>
-
-                    <p class="product-desc">
-                        아이에게 가장 익숙한 공간인 집에서 자연광을 활용해
-                        일상의 온기와 가족의 결을 담아냅니다.
-                    </p>
-
-                    <div class="mini-card product-info">
-                        <p><span class="label">대상</span>아이 및 가족</p>
-                        <p><span class="label">제공</span>원본 전체 제공 + 보정본 12장</p>
-                        <p class="price-line">150,000원</p>
-                    </div>
-
-                    <div class="portfolio-slider-wrap">
-                        <button class="slider-arrow left" onclick="scrollSlider(this, -1)" aria-label="이전 사진">‹</button>
-                        <div class="portfolio-slider" data-gallery="home">
-                            <img src="home1.jpg" alt="Home Sweet Home portfolio 1" onclick="openLightbox('home', 0)">
-                            <img src="home2.jpg" alt="Home Sweet Home portfolio 2" onclick="openLightbox('home', 1)">
-                            <img src="home3.jpg" alt="Home Sweet Home portfolio 3" onclick="openLightbox('home', 2)">
-                            <img src="home4.jpg" alt="Home Sweet Home portfolio 4" onclick="openLightbox('home', 3)">
-                            <img src="home5.jpg" alt="Home Sweet Home portfolio 5" onclick="openLightbox('home', 4)">
-                        </div>
-                        <button class="slider-arrow right" onclick="scrollSlider(this, 1)" aria-label="다음 사진">›</button>
-                    </div>
-                </div>
-
-                <div class="soft-card product-card">
-                    <div class="product-header">
-                        <h2 class="product-title serif">04. Home, Sweet Baby</h2>
-                        <span class="product-badge">BABY SPECIAL</span>
-                    </div>
-
-                    <p class="product-meta">아기의 특별한 날을 기록하고 싶은 가족 · 홈 촬영 60분</p>
-
-                    <p class="product-desc">
-                        가장 작고 가장 빠르게 지나가는 시간을 기록합니다.
-                        손의 크기, 눈의 떨림, 처음 세상을 바라보는 얼굴까지
-                        지금의 순간을 오래 남길 수 있도록 하나의 포스터로 함께 담아드립니다.
-                    </p>
-
-                    <div class="mini-card product-info">
-                        <p><span class="label">대상</span>아기의 특별한 날을 기록하고 싶은 가족</p>
-                        <p><span class="label">제공</span>원본 전체 제공 + 보정본 10장</p>
-                        <p><span class="label">구성</span>기념 포스터 1종 포함 (디지털 파일)</p>
-                        <p class="price-line">180,000원</p>
-                    </div>
-
-                    <div class="portfolio-slider-wrap">
-                        <button class="slider-arrow left" onclick="scrollSlider(this, -1)" aria-label="이전 사진">‹</button>
-                        <div class="portfolio-slider" data-gallery="baby">
-                            <img src="baby1.jpg" alt="Home Sweet Baby portfolio 1" onclick="openLightbox('baby', 0)">
-                            <img src="baby2.jpg" alt="Home Sweet Baby portfolio 2" onclick="openLightbox('baby', 1)">
-                            <img src="baby3.jpg" alt="Home Sweet Baby portfolio 3" onclick="openLightbox('baby', 2)">
-                            <img src="baby4.jpg" alt="Home Sweet Baby portfolio 4" onclick="openLightbox('baby', 3)">
-                            <img src="baby5.jpg" alt="Home Sweet Baby portfolio 5" onclick="openLightbox('baby', 4)">
-                            <img src="baby6.jpg" alt="Home Sweet Baby portfolio 6" onclick="openLightbox('baby', 5)">
-                        </div>
-                        <button class="slider-arrow right" onclick="scrollSlider(this, 1)" aria-label="다음 사진">›</button>
-                    </div>
-                </div>
-
-                <div class="note-list">
-                    <p>• 추가 인원 1인당 10,000원</p>
-                    <p>• 울산 전 지역 촬영 가능</p>
-                    <p>• 울산 외 지역은 DM 별도 문의</p>
-                </div>
-
-                <div class="divider"></div>
-
-                <div class="care-section">
-                    <p class="care-kicker">For Baby, With Care</p>
-
-                    <div class="soft-card care-card">
-                        <p><strong>아기의 컨디션과 안전을 가장 먼저 생각합니다.</strong></p>
-
-                        <div class="care-list">
-                            <p>• 베이비시터 자격증 취득</p>
-                            <p>• 백일해 예방접종 완료</p>
-                        </div>
-
-                        <p>촬영은 아이의 리듬과 호흡에 맞춰 천천히 진행됩니다.</p>
-                    </div>
-                </div>
+        <!-- Process Tab -->
+        <div id="process" class="tab-content">
+            <div class="soft-card">
+                <h3 class="font-bold mb-2">01. Time Guide</h3>
+                <p class="text-sm text-gray-600">모든 촬영은 약 60분~90분 소요됩니다.</p>
             </div>
-
-            <!-- Process -->
-            <div id="process" class="tab-content section-gap">
-                <div class="soft-card step-card">
-                    <span class="step-no">01</span>
-                    <div>
-                        <h3 class="step-title">Time Guide</h3>
-                        <div class="step-body">
-                            <p>• 소풍 스냅: 약 60분</p>
-                            <p>• 가족 야외스냅: 약 1시간 ~ 1시간 30분</p>
-                            <p>• 홈스냅: 약 1시간 ~ 1시간 30분</p>
-                            <p>• Home, Sweet Baby: 약 60분</p>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="soft-card step-card">
-                    <span class="step-no">02</span>
-                    <div>
-                        <h3 class="step-title">Photo Data</h3>
-                        <div class="step-body">
-                            <p>눈 감거나 초점이 맞지 않은 컷을 제외한 원본 전체는 JPG로 <span class="em">3일 이내</span> 전달드립니다.</p>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="soft-card step-card">
-                    <span class="step-no">03</span>
-                    <div>
-                        <h3 class="step-title">Final Edit</h3>
-                        <div class="step-body">
-                            <p>보정본은 셀렉 완료 후 <span class="em">10일 이내</span> 전달드립니다.</p>
-                            <p>최종 사진은 <span class="em">네이버 공유 링크</span>로 전달됩니다.</p>
-                            <p>전달된 사진은 <span class="em">1개월간 보관</span>되며, 이후에는 삭제됩니다.</p>
-                            <p style="margin-top:6px; font-weight:600; color:#40463D;">원활한 보관을 위해 기한 내 반드시 저장 부탁드립니다.</p>
-                        </div>
-                    </div>
-                </div>
-            </div>
-
-            <!-- Policy -->
-            <div id="policy" class="tab-content section-gap">
-                <div class="soft-card policy-card">
-                    <h3 class="block-title">예약 및 환불</h3>
-                    <div class="block-body">
-                        <p>• 예약금 50,000원 입금 순으로 예약이 확정됩니다.</p>
-                        <p>• 촬영일 10일 전까지 취소 시 예약금 전액 환불 가능합니다.</p>
-                        <p>• 촬영일 9일 전부터 4일 전까지 취소 시 예약금 50% 환불 가능합니다.</p>
-                        <p>• 촬영일 3일 전부터 당일까지 취소 시 예약금 환불 불가합니다.</p>
-                    </div>
-                </div>
-
-                <div class="soft-card policy-card">
-                    <h3 class="block-title">날짜 변경</h3>
-                    <div class="block-body">
-                        <p>• 우천 시 야외 촬영은 무료 1회 날짜 변경 가능합니다.</p>
-                        <p>• 개인 사정에 의한 변경은 촬영일 기준 2주 전까지 1회 가능합니다.</p>
-                        <p>• 이후 변경은 제한되거나 추가금이 발생할 수 있습니다.</p>
-                    </div>
-                </div>
-
-                <div class="soft-card policy-card">
-                    <h3 class="block-title">촬영 유의사항</h3>
-                    <div class="block-body">
-                        <p>• 지각 시에도 예약된 시간 기준으로 촬영이 진행됩니다.</p>
-                        <p>• 노쇼 시 예약금은 환불되지 않습니다.</p>
-                        <p>• 문의는 예약 페이지를 통해 남겨주시면 순차적으로 답변드립니다.</p>
-                    </div>
-                </div>
-            </div>
-
-            <!-- Edit -->
-            <div id="edit" class="tab-content">
-                <div class="edit-logo">
-                    <img src="6.png" alt="Wonchae Snap Logo" class="w-28 h-28 object-contain logo-tint">
-                </div>
-
-                <div class="edit-heading">
-                    <p class="edit-kicker">Edit Philosophy</p>
-                    <h3 class="edit-title">나답지만,<br>가장 아름답게</h3>
-                </div>
-
-                <div class="soft-card edit-card">
-                    <div class="edit-stack">
-                        <p>
-                            원채스냅은 피부 톤과 전체적인 분위기를 자연스럽게 정리하며,
-                            본래의 인상과 순간을 해치지 않는 보정을 지향합니다.
-                        </p>
-
-                        <div class="mini-card" style="padding:16px 18px;">
-                            <p style="font-weight:700; color:var(--sage-dark); margin-bottom:4px;">아이 보정</p>
-                            <p>태열, 침독 등 일시적인 피부 트러블은 정리합니다.</p>
-                        </div>
-
-                        <div class="mini-card" style="padding:16px 18px;">
-                            <p style="font-weight:700; color:var(--sage-dark); margin-bottom:4px;">기본 피부 보정</p>
-                            <p>전체적인 피부 톤과 컨디션을 해치지 않는 선에서 자연스럽게 정돈하는 보정은 가능합니다.</p>
-                        </div>
-
-                        <div class="mini-card" style="padding:16px 18px;">
-                            <p style="font-weight:700; color:var(--sage-dark); margin-bottom:8px;">진행하지 않는 보정</p>
-                            <ul class="list-disc pl-5" style="margin:0; line-height:1.9;">
-                                <li>얼굴 형태 수정</li>
-                                <li>눈 비대칭, 입꼬리 대칭 등 형태 교정</li>
-                                <li>표정 변경</li>
-                                <li>안경 빛 반사 제거</li>
-                                <li>합성 및 현실 왜곡에 가까운 보정</li>
-                                <li>배경 정리 및 배경 합성</li>
-                            </ul>
-                        </div>
-
-                        <p style="text-align:center; color:#394039; font-weight:600; padding-top:2px;">
-                            가장 나다운 순간이 가장 오래 남는다고 믿습니다.
-                        </p>
-                    </div>
-                </div>
+            <div class="soft-card">
+                <h3 class="font-bold mb-2">02. Photo Data</h3>
+                <p class="text-sm text-gray-600">원본은 3일 이내, 보정본은 셀렉 후 10일 이내 전달됩니다.</p>
             </div>
         </div>
 
-        <!-- Footer -->
-        <div class="footer-wrap">
-            <p class="footer-text">
-                아기의 컨디션과 계절감을 고려해 여유 있게 예약해주세요.
-            </p>
+        <!-- Policy Tab -->
+        <div id="policy" class="tab-content">
+            <div class="soft-card">
+                <h3 class="font-bold mb-2">예약 및 환불</h3>
+                <p class="text-sm text-gray-600">예약금 입금 순으로 확정되며, 10일 전까지 전액 환불 가능합니다.</p>
+            </div>
+        </div>
 
-            <div class="footer-buttons">
-                <a href="https://hoxy-ai.com/reservation/vtqzX4" target="_blank" class="footer-primary-btn">
-                    예약하기
-                </a>
-
-                <a href="https://www.instagram.com/itswonchae/" target="_blank" class="footer-secondary-btn">
-                    인스타그램 바로가기
-                </a>
+        <!-- Edit Tab -->
+        <div id="edit" class="tab-content">
+            <div class="soft-card">
+                <h3 class="font-bold mb-2">보정 철학</h3>
+                <p class="text-sm text-gray-600">과한 왜곡보다는 자연스러운 피부톤 정돈을 지향합니다.</p>
             </div>
         </div>
     </div>
 
-    <!-- Lightbox -->
-    <div id="lightbox" class="lightbox" onclick="closeLightbox(event)">
-        <div class="lightbox-inner">
-            <button class="lightbox-close" onclick="closeLightbox(event)" aria-label="닫기">×</button>
-            <button class="lightbox-nav lightbox-prev" onclick="showPrevImage(event)" aria-label="이전 이미지">‹</button>
-            <img id="lightboxImage" class="lightbox-img" src="" alt="">
-            <button class="lightbox-nav lightbox-next" onclick="showNextImage(event)" aria-label="다음 이미지">›</button>
+    <!-- Footer -->
+    <div class="footer-wrap">
+        <div class="footer-buttons">
+            <a href="https://hoxy-ai.com/reservation/vtqzX4" target="_blank" class="footer-primary-btn">예약하기</a>
+            <a href="https://www.instagram.com/itswonchae/" target="_blank" class="footer-secondary-btn">인스타그램</a>
         </div>
     </div>
+</div>
 
-   <script>
-const galleries = {
-    picnic: [
-        'picnic1.jpg',
-        'picnic2.jpg',
-        'picnic3.jpg',
-        'picnic4.jpg',
-        'picnic5.jpg',
-        'picnic6.jpg'
-    ],
-    home: [
-        'home1.jpg',
-        'home2.jpg',
-        'home3.jpg',
-        'home4.jpg',
-        'home5.jpg'
-    ],
-    baby: [
-        'baby1.jpg',
-        'baby2.jpg',
-        'baby3.jpg',
-        'baby4.jpg',
-        'baby5.jpg',
-        'baby6.jpg'
-    ]
-};
-
-let currentGallery = null;
-let currentIndex = 0;
-
-function showTab(tabId) {
-    const tabs = document.querySelectorAll('.tab-content');
-    const buttons = document.querySelectorAll('.tab-nav button');
-
-    tabs.forEach(tab => {
-        tab.classList.remove('active');
-    });
-
-    buttons.forEach(button => {
-        button.classList.remove('nav-active');
-    });
-
-    const selectedTab = document.getElementById(tabId);
-    const selectedButton = document.getElementById('btn-' + tabId);
-
-    if (selectedTab) {
-        selectedTab.classList.add('active');
-    }
-
-    if (selectedButton) {
-        selectedButton.classList.add('nav-active');
-    }
-}
-
-function handleLogoError(img, colorType) {
-    const container = img.parentElement;
-    const iconColor = colorType === 'white' ? 'rgba(255,255,255,0.68)' : '#8FA2B5';
-    const bgClass = colorType === 'white' ? '' : 'bg-[var(--sage-light)] rounded-full';
-
-    container.innerHTML = `
-        <div class="w-16 h-16 ${bgClass} flex items-center justify-center">
-            <svg class="w-10 h-10" style="color: ${iconColor}" fill="currentColor" viewBox="0 0 24 24">
-                <path d="M12 15.5a3.5 3.5 0 100-7 3.5 3.5 0 000 7z"/>
-                <path fill-rule="evenodd" d="M4.5 7.5a3 3 0 013-3h9a3 3 0 013 3v9a3 3 0 01-3 3h-9a3 3 0 01-3-3v-9zM12 7a4.5 4.5 0 100 9 4.5 4.5 0 000-9z" clip-rule="evenodd"/>
-            </svg>
-        </div>
-    `;
-}
-
-function openLightbox(galleryName, index) {
-    currentGallery = galleryName;
-    currentIndex = index;
-    updateLightboxImage();
-
-    const lightbox = document.getElementById('lightbox');
-    if (lightbox) {
-        lightbox.classList.add('active');
-        document.body.style.overflow = 'hidden';
-    }
-}
-
-function updateLightboxImage() {
-    const lightboxImage = document.getElementById('lightboxImage');
-    if (!lightboxImage || !currentGallery) return;
-
-    lightboxImage.src = galleries[currentGallery][currentIndex];
-    lightboxImage.alt = `${currentGallery} image ${currentIndex + 1}`;
-}
-
-function showPrevImage(event) {
-    event.stopPropagation();
-    if (!currentGallery) return;
-
-    const images = galleries[currentGallery];
-    currentIndex = (currentIndex - 1 + images.length) % images.length;
-    updateLightboxImage();
-}
-
-function showNextImage(event) {
-    event.stopPropagation();
-    if (!currentGallery) return;
-
-    const images = galleries[currentGallery];
-    currentIndex = (currentIndex + 1) % images.length;
-    updateLightboxImage();
-}
-
-function closeLightbox(event) {
-    if (
-        event.target.id === 'lightbox' ||
-        event.target.classList.contains('lightbox-close')
-    ) {
-        const lightbox = document.getElementById('lightbox');
-        const lightboxImage = document.getElementById('lightboxImage');
-
-        if (lightbox) lightbox.classList.remove('active');
-        if (lightboxImage) lightboxImage.src = '';
-        document.body.style.overflow = '';
-    }
-}
-
-function scrollSlider(button, direction) {
-    const slider = button.parentElement.querySelector('.portfolio-slider');
-    const firstImage = slider ? slider.querySelector('img') : null;
-    if (!slider || !firstImage) return;
-
-    const gap = window.innerWidth <= 640 ? 8 : 10;
-    const scrollAmount = (firstImage.clientWidth + gap) * 3;
-
-    slider.scrollBy({
-        left: direction * scrollAmount,
-        behavior: 'smooth'
-    });
-}
-
-function initPortfolioDrag() {
-    const sliders = document.querySelectorAll('.portfolio-slider');
-
-    sliders.forEach((slider) => {
-        let isDown = false;
-        let startX = 0;
-        let scrollLeft = 0;
-        let moved = false;
-
-        slider.addEventListener('mousedown', (e) => {
-            isDown = true;
-            moved = false;
-            slider.classList.add('dragging');
-            startX = e.pageX - slider.offsetLeft;
-            scrollLeft = slider.scrollLeft;
+<script>
+    function showTab(tabId) {
+        // 모든 컨텐츠 숨기기
+        const contents = document.querySelectorAll('.tab-content');
+        contents.forEach(content => {
+            content.classList.remove('active');
         });
 
-        slider.addEventListener('mouseleave', () => {
-            isDown = false;
-            slider.classList.remove('dragging');
+        // 모든 버튼 비활성화
+        const buttons = document.querySelectorAll('.tab-nav button');
+        buttons.forEach(btn => {
+            btn.classList.remove('nav-active');
         });
 
-        slider.addEventListener('mouseup', () => {
-            isDown = false;
-            slider.classList.remove('dragging');
-        });
-
-        slider.addEventListener('mousemove', (e) => {
-            if (!isDown) return;
-            e.preventDefault();
-            moved = true;
-            const x = e.pageX - slider.offsetLeft;
-            const walk = (x - startX) * 1.2;
-            slider.scrollLeft = scrollLeft - walk;
-        });
-
-        let touchStartX = 0;
-        let touchScrollLeft = 0;
-
-        slider.addEventListener('touchstart', (e) => {
-            touchStartX = e.touches[0].pageX;
-            touchScrollLeft = slider.scrollLeft;
-        }, { passive: true });
-
-        slider.addEventListener('touchmove', (e) => {
-            const x = e.touches[0].pageX;
-            const walk = (x - touchStartX) * 1.1;
-            slider.scrollLeft = touchScrollLeft - walk;
-        }, { passive: true });
-
-        slider.querySelectorAll('img').forEach((img) => {
-            img.addEventListener('click', (e) => {
-                if (moved) {
-                    e.preventDefault();
-                    e.stopPropagation();
-                    moved = false;
-                }
-            });
-        });
-    });
-}
-
-document.addEventListener('keydown', function(event) {
-    const lightbox = document.getElementById('lightbox');
-    const isOpen = lightbox && lightbox.classList.contains('active');
-
-    if (event.key === 'Escape' && isOpen) {
-        lightbox.classList.remove('active');
-        const img = document.getElementById('lightboxImage');
-        if (img) img.src = '';
-        document.body.style.overflow = '';
+        // 선택한 탭 보이기
+        document.getElementById(tabId).classList.add('active');
+        
+        // 선택한 버튼 활성화
+        document.getElementById('btn-' + tabId).classList.add('nav-active');
     }
-
-    if (event.key === 'ArrowLeft' && isOpen && currentGallery) {
-        currentIndex = (currentIndex - 1 + galleries[currentGallery].length) % galleries[currentGallery].length;
-        updateLightboxImage();
-    }
-
-    if (event.key === 'ArrowRight' && isOpen && currentGallery) {
-        currentIndex = (currentIndex + 1) % galleries[currentGallery].length;
-        updateLightboxImage();
-    }
-});
-
-document.addEventListener('DOMContentLoaded', function() {
-    initPortfolioDrag();
-    showTab('product');
-});
 </script>
+
 </body>
 </html>
