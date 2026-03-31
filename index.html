@@ -354,7 +354,31 @@
                 right: 8px;
             }
         }
+                        font-size: 22px;
+            }
+
+            .lightbox-prev {
+                left: 8px;
+            }
+
+            .lightbox-next {
+                right: 8px;
+            }
+        }
     </style>
+
+    .info-chip {
+    padding: 6px 10px;
+    border-radius: 9999px;
+    background: #F2F4ED;
+    border: 1px solid var(--line);
+    font-weight: 500;
+    pointer-events: none;
+}
+</head>
+    </style>
+
+    
 </head>
 
 <body class="p-4 md:p-8 flex justify-center items-start min-h-screen">
@@ -380,11 +404,11 @@
 
         <!-- Quick Summary -->
         <div class="px-6 py-5 bg-[#FAFBFC] border-b border-[var(--line)]">
-            <div class="grid grid-cols-3 gap-2 text-center text-[11px] text-gray-600">
-                <div class="mini-card py-3">울산 전 지역 촬영</div>
-                <div class="mini-card py-3">원본 전체 제공</div>
-                <div class="mini-card py-3">3일 이내 원본 전달</div>
-            </div>
+            <div class="flex flex-wrap justify-center gap-2 text-[11px] text-gray-500">
+    <span class="info-chip">울산 전 지역 촬영</span>
+    <span class="info-chip">원본 전체 제공</span>
+    <span class="info-chip">3일 이내 원본 전달</span>
+</div>
         </div>
 
         <!-- Navigation -->
