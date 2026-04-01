@@ -20,13 +20,13 @@
     <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@300;400;500;700;800&family=Playfair+Display:ital,wght@0,400;0,700;1,400&display=swap" rel="stylesheet">
 
     <style>
-        :root {
---sage: #F3D1B0;     /* 살구빛 */
---sage-dark:#FFF1E6;
---sage-light: #EFAF7A;    /* 따뜻한 오렌지 */
-    --ink: #5A514A;
-    --paper: #FFFAF6;
-    --line: #F3E3D7;
+:root {
+    --sage: #EBCB7A;
+    --sage-dark: #D9A441;
+    --sage-light: #FFF8E7;
+    --ink: #5A513F;
+    --paper: #FFFCF6;
+    --line: #E9D7AE;
 }
 
         body {
@@ -86,10 +86,11 @@
         }
 
         .mini-card {
-            background: #FBFBFC;
-            border: 1px solid var(--line);
-            border-radius: 1rem;
-        }
+    background: #FFF9ED;
+    border: 1px solid var(--line);
+    border-radius: 1rem;
+    color: #5A513F;
+}
 
         .logo-tint {
             filter: invert(76%) sepia(8%) saturate(438%) hue-rotate(170deg) brightness(88%) contrast(86%);
@@ -295,11 +296,20 @@
         }
 
         .price-line {
-            padding-top: 4px;
-            font-size: 13px;
-            font-weight: 800;
-            color: var(--sage-dark);
-        }
+    padding-top: 6px;
+    font-size: 13px;
+    font-weight: 800;
+    color: #C98B1F;
+}
+        .mini-card p {
+    color: #5A513F;
+}
+
+.mini-card span.text-\[var\(--sage-dark\)\] {
+    color: #C4902F !important;
+    font-weight: 700;
+}
+        
 
         @media (min-width: 640px) {
             .product-header {
