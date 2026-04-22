@@ -21,13 +21,19 @@
 
     <style>
 :root {
-    --sage: #EBDDAC;        /* 메인 배경 (베이지) */
-    --sage-dark: #DE8E8E;   /* 포인트 (핑크) */
-    --sage-light: #FFF6E8;  /* 카드/박스 배경 (살짝 밝게) */
+    /* 1. 메인 배경 및 포인트 컬러 (이미지 기반) */
+    --sage: #EBDDAC;         /* Double Colonial White: 보조 배경이나 버튼 등에 사용 */
+    --sage-dark: #DE8E8E;    /* New York Pink: 강조하고 싶은 포인트, 아이콘, 버튼 등 */
+    --sage-light: #F7F1E3;   /* 메인 배경보다 살짝 더 밝은 톤 (카드 UI나 검색창 등) */
 
-    --ink: #2F2A24;         /* 🔥 핵심 텍스트 (진하게) */
-    --paper: #FFFCF7;       /* 전체 배경 or 여백 */
-    --line: #D8C7A3;        /* 구분선 */
+    /* 2. 가독성을 위한 핵심 텍스트 컬러 */
+    --ink: #3D362F;          /* 너무 차가운 검정 대신, 따뜻한 톤이 가미된 짙은 브라운 (가독성 최우선) */
+    
+    /* 3. 전체적인 베이스 컬러 */
+    --paper: #FDFBF7;        /* 사이트 전체의 기본 배경색 (순백색보다 눈이 편안한 아이보리) */
+    
+    /* 4. 구분선 및 경계선 */
+    --line: #D1C0A8;         /* 배경색과 자연스럽게 어우러지는 선 색상 */
 }
         body {
             font-family: 'Noto Sans KR', sans-serif;
