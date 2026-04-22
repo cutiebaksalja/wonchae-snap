@@ -21,14 +21,13 @@
 
     <style>
 :root {
-    --sage: #CFAE5D; 
-    --sage-dark: #A8842A;
+    --sage: #F6D98F;
+    --sage-dark: #E2B84E;
     --sage-light: #FFF6DC;
-    --ink: #3A3224;
+    --ink: #3B2F1E;
     --paper: #FFFCF6;
-    --line: #E4CC8A;
+    --line: #E9D7AE;
 }
-
         body {
             font-family: 'Noto Sans KR', sans-serif;
             background-color: var(--paper);
@@ -371,22 +370,22 @@
     <div class="max-w-md w-full bg-white shadow-2xl rounded-[2rem] overflow-hidden border border-[#EEF1F4]">
 
         <!-- Header -->
-        <div class="bg-[var(--sage)] px-8 pt-8 pb-7 text-center text-white flex flex-col items-center">
-            <div class="w-28 h-28 mb-4 flex items-center justify-center rounded-full overflow-hidden bg-white/10 backdrop-blur-sm">
-                <img src="6.png" alt="Wonchae Snap" class="w-full h-full object-contain brightness-0 invert" onerror="handleLogoError(this, 'white')">
-            </div>
+        <div class="px-8 pt-8 pb-7 text-center flex flex-col items-center bg-gradient-to-b from-[#F8DF93] to-[#F3D57C]">
+    <div class="w-28 h-28 mb-4 flex items-center justify-center rounded-full overflow-hidden bg-[#FFF7DF]">
+        <img src="6.png" alt="Wonchae Snap" class="w-full h-full object-contain" onerror="handleLogoError(this, 'color')">
+    </div>
 
-            <p class="text-[10px] uppercase tracking-[0.38em] font-light opacity-80 mt-1">KIDS & FAMILY PHOTOGRAPHY</p>
-            <div class="mt-5 text-center leading-relaxed">
-                <p class="text-[11px] tracking-[0.35em] opacity-70 font-light">
-                    <span class="serif font-bold">元</span> 본래의 /
-                    <span class="serif font-bold">彩</span> 색
-                </p>
-                <p class="text-[13px] mt-3 font-medium opacity-95">
-                    본래의 색을 기록합니다
-                </p>
-            </div>
-        </div>
+    <p class="text-[10px] uppercase tracking-[0.38em] font-light text-[#6B5735] mt-1">KIDS & FAMILY PHOTOGRAPHY</p>
+    <div class="mt-5 text-center leading-relaxed">
+        <p class="text-[11px] tracking-[0.35em] text-[#8A6A2F] font-light">
+            <span class="serif font-bold">元</span> 본래의 /
+            <span class="serif font-bold">彩</span> 색
+        </p>
+        <p class="text-[13px] mt-3 font-semibold text-[#4A3823]">
+            본래의 색을 기록합니다
+        </p>
+    </div>
+</div>
 
         <!-- Quick Summary -->
         <div class="px-6 py-5 bg-[#FAFBFC] border-b border-[var(--line)]">
@@ -743,9 +742,9 @@
         }
 
         function handleLogoError(img, colorType) {
-            const container = img.parentElement;
-            let iconColor = colorType === 'white' ? 'rgba(255,255,255,0.65)' : '#8FA2B5';
-            let bgClass = colorType === 'white' ? '' : 'bg-[var(--sage-light)] rounded-full';
+    const container = img.parentElement;
+    let iconColor = colorType === 'white' ? '#FFFFFF' : '#D9A62E';
+    let bgClass = colorType === 'white' ? '' : 'bg-[var(--sage-light)] rounded-full';
 
             container.innerHTML = `
                 <div class="w-16 h-16 ${bgClass} flex items-center justify-center">
