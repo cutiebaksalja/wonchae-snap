@@ -85,11 +85,11 @@
         }
 
         .mini-card {
-    background: #FFF9ED;
-    border: 1px solid var(--line);
-    border-radius: 1rem;
-    color: #5A513F;
-}
+            background: #FFF9ED;
+            border: 1px solid var(--line);
+            border-radius: 1rem;
+            color: #5A513F;
+        }
 
         .logo-tint {
             filter: invert(76%) sepia(8%) saturate(438%) hue-rotate(170deg) brightness(88%) contrast(86%);
@@ -295,20 +295,20 @@
         }
 
         .price-line {
-    padding-top: 6px;
-    font-size: 13px;
-    font-weight: 800;
-    color: #C98B1F;
-}
-        .mini-card p {
-    color: #5A513F;
-}
+            padding-top: 6px;
+            font-size: 13px;
+            font-weight: 800;
+            color: #C98B1F;
+        }
 
-.mini-card span.text-\[var\(--sage-dark\)\] {
-    color: #C4902F !important;
-    font-weight: 700;
-}
-        
+        .mini-card p {
+            color: #5A513F;
+        }
+
+        .mini-card span.text-\[var\(--sage-dark\)\] {
+            color: #C4902F !important;
+            font-weight: 700;
+        }
 
         @media (min-width: 640px) {
             .product-header {
@@ -362,11 +362,11 @@
             .lightbox-next {
                 right: 8px;
             }
-            
         }
+
         .shadow-hero {
-    box-shadow: 0 10px 30px rgba(0,0,0,0.06);
-}
+            box-shadow: 0 10px 30px rgba(0,0,0,0.06);
+        }
     </style>
 </head>
 
@@ -375,21 +375,21 @@
 
         <!-- Header -->
         <div class="px-8 pt-8 pb-7 text-center flex flex-col items-center bg-gradient-to-b from-[#F8DF93] to-[#F3D57C]">
-    <div class="w-28 h-28 mb-4 flex items-center justify-center rounded-full overflow-hidden bg-[#FFF7DF]">
-        <img src="6.png" alt="Wonchae Snap" class="w-full h-full object-contain" onerror="handleLogoError(this, 'color')">
-    </div>
+            <div class="w-28 h-28 mb-4 flex items-center justify-center rounded-full overflow-hidden bg-[#FFF7DF]">
+                <img src="6.png" alt="Wonchae Snap" class="w-full h-full object-contain" onerror="handleLogoError(this, 'color')">
+            </div>
 
-    <p class="text-[10px] uppercase tracking-[0.38em] font-light text-[#6B5735] mt-1">KIDS & FAMILY PHOTOGRAPHY</p>
-    <div class="mt-5 text-center leading-relaxed">
-        <p class="text-[11px] tracking-[0.35em] text-[#8A6A2F] font-light">
-            <span class="serif font-bold">元</span> 본래의 /
-            <span class="serif font-bold">彩</span> 색
-        </p>
-        <p class="text-[13px] mt-3 font-semibold text-[#4A3823]">
-            본래의 색을 기록합니다
-        </p>
-    </div>
-</div>
+            <p class="text-[10px] uppercase tracking-[0.38em] font-light text-[#6B5735] mt-1">KIDS & FAMILY PHOTOGRAPHY</p>
+            <div class="mt-5 text-center leading-relaxed">
+                <p class="text-[11px] tracking-[0.35em] text-[#8A6A2F] font-light">
+                    <span class="serif font-bold">元</span> 본래의 /
+                    <span class="serif font-bold">彩</span> 색
+                </p>
+                <p class="text-[13px] mt-3 font-semibold text-[#4A3823]">
+                    본래의 색을 기록합니다
+                </p>
+            </div>
+        </div>
 
         <!-- Quick Summary -->
         <div class="px-6 py-5 bg-[#FAFBFC] border-b border-[var(--line)]">
@@ -462,6 +462,16 @@
                         <p><span class="font-bold text-[var(--sage-dark)]">제공</span> 원본 전체 제공 + 보정본 15장</p>
                         <p class="price-line">200,000원</p>
                     </div>
+
+                    <div class="portfolio-slider-wrap">
+                        <button class="slider-arrow left" onclick="scrollSlider(this, -1)" aria-label="이전 사진">‹</button>
+                        <div class="portfolio-slider" data-gallery="walk">
+                            <img src="walk1.jpg" alt="Walk with Wonchae portfolio 1" onclick="openLightbox('walk', 0)">
+                            <img src="walk2.jpg" alt="Walk with Wonchae portfolio 2" onclick="openLightbox('walk', 1)">
+                            <img src="walk3.jpg" alt="Walk with Wonchae portfolio 3" onclick="openLightbox('walk', 2)">
+                        </div>
+                        <button class="slider-arrow right" onclick="scrollSlider(this, 1)" aria-label="다음 사진">›</button>
+                    </div>
                 </div>
 
                 <div class="soft-card p-5">
@@ -503,10 +513,10 @@
                         가장 작고 가장 빠르게 지나가는 시간을 기록합니다.
                         손의 크기, 눈의 떨림, 처음 세상을 바라보는 얼굴까지
                         지금의 순간을 오래 남길 수 있도록
+                    </p>
                     <div class="mini-card p-4 text-[11px] space-y-1.5">
                         <p><span class="font-bold text-[var(--sage-dark)]">대상</span> 11개월 전 아이의 특별한 날을 기록하고 싶은 가족 (3인 기준)</p>
                         <p><span class="font-bold text-[var(--sage-dark)]">제공</span> 원본 전체 제공 + 보정본 10장</p>
-                        <p>
                         <p class="price-line">150,000원</p>
                     </div>
 
@@ -524,43 +534,39 @@
                     </div>
                 </div>
 
-              <div class="pt-5 pb-7 text-[12px] text-gray-600 px-1">
-    
-    <p class="font-medium text-gray-800 mb-2">
-        • 인원 추가
-    </p>
+                <div class="pt-5 pb-7 text-[12px] text-gray-600 px-1">
+                    <p class="font-medium text-gray-800 mb-2">
+                        • 인원 추가
+                    </p>
 
-    <div class="pl-3 space-y-1 leading-relaxed">
-        <p>성인 기준 인원 초과 시 1인당 50,000원 추가</p>
-        <p>미취학아동 기준 인원 초과 시 1인당 20,000원 추가</p>
-    </div>
+                    <div class="pl-3 space-y-1 leading-relaxed">
+                        <p>성인 기준 인원 초과 시 1인당 50,000원 추가</p>
+                        <p>미취학아동 기준 인원 초과 시 1인당 20,000원 추가</p>
+                    </div>
+                </div>
 
-</div>
+                <div class="my-7 border-t border-[var(--line)]"></div>
 
-<div class="my-7 border-t border-[var(--line)]"></div>
+                <div class="text-center px-4 pb-3">
+                    <p class="text-[11px] tracking-[0.28em] uppercase text-[var(--sage-dark)] font-bold mb-4">
+                        FOR BABY, WITH CARE
+                    </p>
 
-<div class="text-center px-4 pb-3">
-    <p class="text-[11px] tracking-[0.28em] uppercase text-[var(--sage-dark)] font-bold mb-4">
-        FOR BABY, WITH CARE
-    </p>
+                    <div class="soft-card p-6 text-[12px] leading-relaxed text-gray-600 space-y-4">
+                        <p class="text-gray-800 font-medium">
+                            아기의 컨디션과 안전을 가장 먼저 생각합니다.
+                        </p>
 
-    <div class="soft-card p-6 text-[12px] leading-relaxed text-gray-600 space-y-4">
-        
-        <p class="text-gray-800 font-medium">
-            아기의 컨디션과 안전을 가장 먼저 생각합니다.
-        </p>
+                        <div class="space-y-1 text-[11px] text-gray-500">
+                            <p>• 베이비시터 자격증 취득</p>
+                            <p>• 백일해 예방접종 완료</p>
+                        </div>
 
-        <div class="space-y-1 text-[11px] text-gray-500">
-            <p>• 베이비시터 자격증 취득</p>
-            <p>• 백일해 예방접종 완료</p>
-        </div>
-
-        <p class="text-gray-600">
-            촬영은 아이의 리듬과 호흡에 맞춰 천천히 진행됩니다.
-        </p>
-
-    </div>
-</div>
+                        <p class="text-gray-600">
+                            촬영은 아이의 리듬과 호흡에 맞춰 천천히 진행됩니다.
+                        </p>
+                    </div>
+                </div>
             </div>
 
             <!-- Process -->
@@ -726,6 +732,11 @@
                 'picnic5.jpg',
                 'picnic6.jpg'
             ],
+            walk: [
+                'walk1.jpg',
+                'walk2.jpg',
+                'walk3.jpg'
+            ],
             home: [
                 'home1.jpg',
                 'home2.jpg',
@@ -754,9 +765,9 @@
         }
 
         function handleLogoError(img, colorType) {
-    const container = img.parentElement;
-    let iconColor = colorType === 'white' ? '#FFFFFF' : '#D9A62E';
-    let bgClass = colorType === 'white' ? '' : 'bg-[var(--sage-light)] rounded-full';
+            const container = img.parentElement;
+            let iconColor = colorType === 'white' ? '#FFFFFF' : '#D9A62E';
+            let bgClass = colorType === 'white' ? '' : 'bg-[var(--sage-light)] rounded-full';
 
             container.innerHTML = `
                 <div class="w-16 h-16 ${bgClass} flex items-center justify-center">
