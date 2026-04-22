@@ -10,36 +10,35 @@
     <meta property="og:description" content="울산 아기 · 가족 스냅 | 이 순간을 담는 감성 스냅">
     <meta property="og:image" content="https://wonchaesnap.com/og.jpg">
     <meta property="og:url" content="https://wonchaesnap.com/">
+    <meta name="twitter:card" content="summary_large_image">
 
     <script src="https://cdn.tailwindcss.com"></script>
     <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@300;400;500;700;800&family=Playfair+Display:ital,wght@0,400;0,700;1,400&display=swap" rel="stylesheet">
 
     <style>
-:root {
-    /* 1. 팔레트 미세 조정 (가독성 강화 버전) */
-    --sage: #EBDDAC;         /* 메인 포인트 배경 */
-    --sage-dark: #C57676;    /* 핑크: 기존보다 채도를 살짝 높여 텍스트 대비 확보 */
-    --sage-light: #F8F3E8;   /* 보조 배경 */
+        :root {
+            /* 제공해주신 이미지 색상 반영 */
+            --sage: #EBDDAC;         /* Double Colonial White: 헤더 및 포인트 배경 */
+            --sage-dark: #DE8E8E;    /* New York Pink: 강조 컬러 및 탭 활성화 */
+            --sage-light: #F8F3E8;   /* 카드 배경 및 보조 컬러 */
 
-    /* 2. 텍스트 컬러 (가장 중요) */
-    --ink: #2F2A24;          /* 짙은 브라운: 메인 텍스트 */
-    --ink-sub: #5F584F;      /* 중간 브라운: 보조 설명 텍스트 */
-    
-    /* 3. 베이스 컬러 */
-    --paper: #FEFCF9;        /* 배경색: 더 깨끗한 아이보리 */
-    --line: #D8C7A3;         /* 구분선 */
-}
+            /* 가독성을 높인 텍스트 및 베이스 컬러 */
+            --ink: #2F2A24;          /* 짙은 브라운: 메인 텍스트 (명도 대비 강화) */
+            --ink-sub: #5F584F;      /* 중간 브라운: 보조 설명 */
+            --paper: #FEFCF9;        /* 배경: 깨끗한 아이보리 */
+            --line: #D8C7A3;         /* 구분선 */
+        }
+
         body {
             font-family: 'Noto Sans KR', sans-serif;
-            background-color: #F0F2F5; /* 배경과 카드 분리를 위해 외부 배경 조정 */
+            background-color: #F0F2F5;
             color: var(--ink);
             line-height: 1.6;
         }
 
-        .serif {
-            font-family: 'Playfair Display', serif;
-        }
+        .serif { font-family: 'Playfair Display', serif; }
 
+        /* 탭 애니메이션 */
         .tab-content { display: none; }
         .tab-content.active { display: block; animation: fadeIn 0.45s ease; }
 
@@ -48,7 +47,7 @@
             to { opacity: 1; transform: translateY(0); }
         }
 
-        /* 내비게이션 가독성 개선 */
+        /* 내비게이션 스타일 */
         .nav-active {
             color: var(--ink) !important;
             font-weight: 800;
@@ -56,17 +55,18 @@
         }
 
         nav button {
-            color: #717171; /* 기존보다 진한 회색으로 변경 */
+            color: #717171;
             font-weight: 500;
+            transition: all 0.2s;
         }
 
-        nav button:hover { background: var(--sage-light); }
-
+        /* 카드 UI */
         .soft-card {
             background: #ffffff;
             border: 1px solid rgba(216, 199, 163, 0.4);
             border-radius: 1.5rem;
             box-shadow: 0 4px 20px rgba(0,0,0,0.03);
+            overflow: hidden;
         }
 
         .mini-card {
@@ -74,10 +74,9 @@
             border: 1px solid var(--line);
             border-radius: 1rem;
             color: var(--ink-sub);
-            font-weight: 500;
         }
 
-        /* 앨범 슬라이더 스타일 */
+        /* 포트폴리오 슬라이더 */
         .portfolio-slider-wrap { position: relative; margin-top: 16px; }
         .portfolio-slider {
             display: flex; gap: 10px; overflow-x: auto;
@@ -89,6 +88,7 @@
             flex: 0 0 calc((100% - 20px) / 3);
             aspect-ratio: 1 / 1.2; object-fit: cover;
             border-radius: 14px; border: 1px solid rgba(0,0,0,0.05);
+            scroll-snap-align: start;
         }
 
         .slider-arrow {
@@ -97,24 +97,17 @@
             background: rgba(255,255,255,0.9); color: var(--ink);
             box-shadow: 0 4px 10px rgba(0,0,0,0.1); z-index: 5;
             display: flex; align-items: center; justify-content: center;
+            border: none; cursor: pointer;
         }
         .slider-arrow.left { left: -10px; }
         .slider-arrow.right { right: -10px; }
 
-        .footer-secondary-btn {
-            display: block; width: 100%; background: white;
-            color: var(--ink-sub); border: 1px solid var(--line);
-            padding: 14px 0; border-radius: 1rem; font-weight: 600;
-            text-align: center; transition: all 0.2s ease;
-        }
-
+        /* 뱃지 및 가격 */
         .product-badge {
             background: var(--sage-dark);
-            color: white; /* 뱃지는 배경이 진하므로 흰색 유지 */
-            font-size: 10px; padding: 4px 10px;
+            color: white; font-size: 10px; padding: 4px 10px;
             border-radius: 6px; font-weight: 700;
         }
-
         .price-line {
             padding-top: 6px; font-size: 14px;
             font-weight: 800; color: var(--ink);
@@ -124,9 +117,11 @@
         .lightbox {
             position: fixed; inset: 0; background: rgba(0,0,0,0.9);
             display: none; align-items: center; justify-content: center;
-            z-index: 9999;
+            z-index: 9999; padding: 20px;
         }
         .lightbox.active { display: flex; }
+        .lightbox-img { max-width: 100%; max-height: 80vh; border-radius: 12px; }
+        .lightbox-close { position: absolute; top: 20px; right: 20px; color: white; font-size: 30px; border: none; background: none; cursor: pointer; }
     </style>
 </head>
 
@@ -134,19 +129,16 @@
     <div class="max-w-md w-full bg-[var(--paper)] shadow-2xl rounded-[2.5rem] overflow-hidden border border-[#D1C0A8]">
 
         <div class="bg-[var(--sage)] px-8 pt-10 pb-8 text-center text-[var(--ink)] flex flex-col items-center">
-            <div class="w-24 h-24 mb-5 flex items-center justify-center rounded-full bg-white/40 border border-white/20">
-                <img src="6.png" alt="Wonchae Snap" class="w-16 h-16 object-contain" onerror="this.style.display='none'">
+            <div class="w-24 h-24 mb-5 flex items-center justify-center rounded-full bg-white/40 border border-white/20 overflow-hidden">
+                <img src="6.png" alt="Wonchae Snap Logo" class="w-16 h-16 object-contain" onerror="this.style.display='none'">
+                <svg class="w-10 h-10 text-white/60" fill="currentColor" viewBox="0 0 24 24" id="logo-fallback" style="display:none;"><path d="M12 15.5a3.5 3.5 0 100-7 3.5 3.5 0 000 7z"/><path fill-rule="evenodd" d="M4.5 7.5a3 3 0 013-3h9a3 3 0 013 3v9a3 3 0 01-3 3h-9a3 3 0 01-3-3v-9zM12 7a4.5 4.5 0 100 9 4.5 4.5 0 000-9z" clip-rule="evenodd"/></svg>
             </div>
-
             <p class="text-[10px] uppercase tracking-[0.4em] font-bold text-[var(--ink-sub)]">KIDS & FAMILY PHOTOGRAPHY</p>
             <div class="mt-4 text-center leading-relaxed">
                 <p class="text-[11px] tracking-[0.3em] font-medium text-[var(--ink-sub)]">
-                    <span class="serif font-bold">元</span> 본래의 /
-                    <span class="serif font-bold">彩</span> 색
+                    <span class="serif font-bold">元</span> 본래의 / <span class="serif font-bold">彩</span> 색
                 </p>
-                <p class="text-[16px] mt-2 font-bold tracking-tight">
-                    본래의 색을 기록합니다
-                </p>
+                <p class="text-[16px] mt-2 font-bold tracking-tight">본래의 색을 기록합니다</p>
             </div>
         </div>
 
@@ -168,28 +160,29 @@
         <div class="p-6 pb-10">
 
             <div id="product" class="tab-content active space-y-6">
-
                 <div class="soft-card p-6">
                     <div class="flex justify-between items-start mb-2">
                         <h2 class="serif text-[18px] font-bold text-[var(--ink)]">01. Picnic with Wonchae</h2>
                         <span class="product-badge">KIDS ONLY</span>
                     </div>
                     <p class="text-[13px] text-[var(--ink-sub)] font-medium mb-3">소풍 스냅 · 야외 60분</p>
-                    <p class="text-[13px] leading-relaxed text-[var(--ink-sub)] mb-5">
-                        원채스냅만의 시그니처로, 소풍 형태로 진행되는 아이 전용 촬영입니다.
-                        자연스럽게 웃고 움직이는 순간을 담습니다.
+                    <p class="text-[12px] leading-relaxed text-[var(--ink-sub)] mb-5">
+                        원채스냅만의 시그니처로, 소풍 형태로 진행되는 아이 전용 촬영입니다. 아이가 공간에 적응하며 자연스럽게 웃고 움직이는 순간을 담습니다.
                     </p>
-                    <div class="mini-card p-4 text-[12px] space-y-2">
+                    <div class="mini-card p-4 text-[11px] space-y-2">
                         <p><span class="font-bold text-[var(--sage-dark)]">대상</span> 아이 단독 촬영 (1인 기준)</p>
                         <p><span class="font-bold text-[var(--sage-dark)]">제공</span> 원본 전체 제공 + 보정본 8장</p>
                         <p class="price-line border-t border-[var(--line)] mt-2 pt-2">130,000원</p>
                     </div>
                     <div class="portfolio-slider-wrap">
-                        <div class="portfolio-slider">
-                            <img src="picnic1.jpg" alt="portfolio">
-                            <img src="picnic2.jpg" alt="portfolio">
-                            <img src="picnic3.jpg" alt="portfolio">
+                        <button class="slider-arrow left" onclick="scrollSlider(this, -1)">‹</button>
+                        <div class="portfolio-slider" data-gallery="picnic">
+                            <img src="picnic1.jpg" alt="picnic" onclick="openLightbox('picnic', 0)">
+                            <img src="picnic2.jpg" alt="picnic" onclick="openLightbox('picnic', 1)">
+                            <img src="picnic3.jpg" alt="picnic" onclick="openLightbox('picnic', 2)">
+                            <img src="picnic4.jpg" alt="picnic" onclick="openLightbox('picnic', 3)">
                         </div>
+                        <button class="slider-arrow right" onclick="scrollSlider(this, 1)">›</button>
                     </div>
                 </div>
 
@@ -199,7 +192,10 @@
                         <span class="product-badge">FAMILY</span>
                     </div>
                     <p class="text-[13px] text-[var(--ink-sub)] font-medium mb-3">가족 야외스냅 · 60분</p>
-                    <div class="mini-card p-4 text-[12px] space-y-2">
+                    <p class="text-[12px] leading-relaxed text-[var(--ink-sub)] mb-5">
+                        공원을 산책하고 머무는 흐름 안에서 아이와 가족이 함께하는 자연스러운 장면을 기록합니다.
+                    </p>
+                    <div class="mini-card p-4 text-[11px] space-y-2">
                         <p><span class="font-bold text-[var(--sage-dark)]">대상</span> 아이 및 가족 (3인 기준)</p>
                         <p><span class="font-bold text-[var(--sage-dark)]">제공</span> 원본 전체 제공 + 보정본 15장</p>
                         <p class="price-line border-t border-[var(--line)] mt-2 pt-2">200,000원</p>
@@ -212,22 +208,44 @@
                         <span class="product-badge">HOME</span>
                     </div>
                     <p class="text-[13px] text-[var(--ink-sub)] font-medium mb-3">홈스냅 · 60분</p>
-                    <div class="mini-card p-4 text-[12px] space-y-2">
+                    <p class="text-[12px] leading-relaxed text-[var(--ink-sub)] mb-5">
+                        아이에게 가장 익숙한 공간인 집에서 자연광을 활용해 일상의 온기와 가족의 결을 담아냅니다.
+                    </p>
+                    <div class="mini-card p-4 text-[11px] space-y-2">
                         <p><span class="font-bold text-[var(--sage-dark)]">대상</span> 아이 및 가족 (3인 기준)</p>
                         <p><span class="font-bold text-[var(--sage-dark)]">제공</span> 원본 전체 제공 + 보정본 12장</p>
                         <p class="price-line border-t border-[var(--line)] mt-2 pt-2">180,000원</p>
                     </div>
                 </div>
 
-                <div class="text-center px-4 py-6 border-t border-[var(--line)] mt-10">
-                    <p class="text-[11px] tracking-[0.3em] uppercase text-[var(--sage-dark)] font-extrabold mb-4">
-                        For Baby, With Care
+                <div class="soft-card p-6">
+                    <div class="flex justify-between items-start mb-2">
+                        <h2 class="serif text-[18px] font-bold text-[var(--ink)]">04. Home, Sweet Baby</h2>
+                        <span class="product-badge">BABY</span>
+                    </div>
+                    <p class="text-[13px] text-[var(--ink-sub)] font-medium mb-3">아기 홈 촬영 · 60분</p>
+                    <p class="text-[12px] leading-relaxed text-[var(--ink-sub)] mb-5">
+                        가장 작고 가장 빠르게 지나가는 시간을 기록합니다. 손의 크기, 눈의 떨림까지 지금의 순간을 오래 남깁니다.
                     </p>
+                    <div class="mini-card p-4 text-[11px] space-y-2">
+                        <p><span class="font-bold text-[var(--sage-dark)]">대상</span> 11개월 전 아기 포함 가족 (3인 기준)</p>
+                        <p><span class="font-bold text-[var(--sage-dark)]">제공</span> 원본 전체 제공 + 보정본 10장</p>
+                        <p class="price-line border-t border-[var(--line)] mt-2 pt-2">160,000원</p>
+                    </div>
+                </div>
+
+                <div class="text-[11px] text-[var(--ink-sub)] space-y-1 px-2">
+                    <p>• <strong>인원 추가:</strong> 성인 50,000원 / 미취학아동 20,000원 추가</p>
+                </div>
+
+                <div class="text-center pt-8 border-t border-[var(--line)]">
+                    <p class="text-[11px] tracking-[0.3em] uppercase text-[var(--sage-dark)] font-extrabold mb-4">For Baby, With Care</p>
                     <div class="bg-white p-6 rounded-3xl border border-[var(--line)] space-y-3">
                         <p class="text-[13px] text-[var(--ink)] font-bold">아기의 컨디션과 안전을 가장 먼저 생각합니다.</p>
-                        <div class="text-[12px] text-[var(--ink-sub)] space-y-1">
+                        <div class="text-[11px] text-[var(--ink-sub)] space-y-1">
                             <p>• 베이비시터 자격증 취득</p>
                             <p>• 백일해 예방접종 완료</p>
+                            <p class="mt-2">촬영은 아이의 리듬에 맞춰 천천히 진행됩니다.</p>
                         </div>
                     </div>
                 </div>
@@ -238,398 +256,137 @@
                     <span class="text-[20px] font-black text-[var(--sage-dark)]">01</span>
                     <div class="text-[13px]">
                         <h3 class="font-bold mb-2">Time Guide</h3>
-                        <p class="text-[var(--ink-sub)]">야외/홈스냅 공통 약 60분~90분 소요</p>
+                        <div class="text-[var(--ink-sub)] space-y-1">
+                            <p>• 소풍/베이비: 약 60분</p>
+                            <p>• 가족/홈스냅: 약 60~90분</p>
+                        </div>
                     </div>
                 </div>
+                <div class="soft-card p-6 flex items-start gap-4">
+                    <span class="text-[20px] font-black text-[var(--sage-dark)]">02</span>
+                    <div class="text-[13px]">
+                        <h3 class="font-bold mb-2">Photo Data</h3>
+                        <p class="text-[var(--ink-sub)]">눈 감은 컷 제외 원본 전체를 <strong class="text-[var(--sage-dark)]">3일 이내</strong> JPG로 전달드립니다.</p>
+                    </div>
                 </div>
+                <div class="soft-card p-6 flex items-start gap-4">
+                    <span class="text-[20px] font-black text-[var(--sage-dark)]">03</span>
+                    <div class="text-[13px]">
+                        <h3 class="font-bold mb-2">Final Edit</h3>
+                        <div class="text-[var(--ink-sub)] space-y-2">
+                            <p>보정본은 셀렉 후 <strong class="text-[var(--sage-dark)]">10일 이내</strong> 전달됩니다.</p>
+                            <p>공유 링크는 <strong class="text-[var(--sage-dark)]">1개월간 보관</strong>되니 기한 내 저장해 주세요.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div id="policy" class="tab-content space-y-4">
+                <div class="soft-card p-6">
+                    <h3 class="font-bold text-[14px] text-[var(--sage-dark)] mb-3">예약 및 환불</h3>
+                    <div class="text-[12px] space-y-2 text-[var(--ink-sub)]">
+                        <p>• 예약금 5만원 입금 시 예약이 확정됩니다.</p>
+                        <p>• 10일 전 취소: 전액 환불</p>
+                        <p>• 9~4일 전 취소: 50% 환불</p>
+                        <p>• 3일 전~당일 취소: 환불 불가</p>
+                    </div>
+                </div>
+                <div class="soft-card p-6">
+                    <h3 class="font-bold text-[14px] text-[var(--sage-dark)] mb-3">날짜 변경</h3>
+                    <div class="text-[12px] space-y-2 text-[var(--ink-sub)]">
+                        <p>• 우천 시 야외 촬영 무료 1회 변경 가능</p>
+                        <p>• 개인 사정은 2주 전까지 1회 가능</p>
+                    </div>
+                </div>
+            </div>
+
+            <div id="edit" class="tab-content space-y-6">
+                <div class="text-center py-6">
+                    <p class="text-[11px] tracking-[0.2em] text-[var(--sage-dark)] font-bold mb-2">Edit Philosophy</p>
+                    <h3 class="text-[22px] font-extrabold tracking-tight">나답지만, 가장 아름답게</h3>
+                </div>
+                <div class="soft-card p-6 space-y-4 text-[13px] text-[var(--ink-sub)]">
+                    <p>본래의 인상을 해치지 않는 자연스러운 보정을 지향합니다.</p>
+                    <div class="mini-card p-4">
+                        <p class="font-bold text-[var(--sage-dark)] mb-1">아이 보정</p>
+                        <p>태열, 침독 등 일시적인 피부 트러블 정돈</p>
+                    </div>
+                    <div class="mini-card p-4">
+                        <p class="font-bold text-[var(--sage-dark)] mb-1">진행하지 않는 보정</p>
+                        <ul class="list-disc pl-5 space-y-1 text-[12px]">
+                            <li>얼굴 형태 및 표정 변경</li>
+                            <li>눈/입 비대칭 등 과한 형태 교정</li>
+                            <li>배경 합성 및 왜곡</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
 
         </div>
 
         <div class="bg-white p-8 text-center border-t border-[var(--line)]">
-            <p class="text-[13px] text-[var(--sage-dark)] font-bold mb-5">
+            <p class="text-[13px] text-[var(--sage-dark)] font-bold mb-5 leading-relaxed">
                 아기의 컨디션과 계절감을 고려해 여유 있게 예약해주세요.
             </p>
-
             <div class="flex flex-col gap-3">
                 <a href="https://pf.kakao.com/_GhZEX" target="_blank"
                    class="block w-full bg-[var(--ink)] hover:bg-black text-white py-4 rounded-2xl font-bold text-[15px] shadow-lg transition-all">
                     카톡 예약 문의하기
                 </a>
-
                 <a href="https://www.instagram.com/itswonchae/" target="_blank"
-                   class="footer-secondary-btn hover:bg-gray-50">
+                   class="block w-full bg-white text-[var(--ink-sub)] border border-[var(--line)] py-4 rounded-2xl font-bold text-[14px] transition-all">
                     인스타그램 @itswonchae
                 </a>
             </div>
         </div>
     </div>
 
+    <div id="lightbox" class="lightbox" onclick="closeLightbox()">
+        <button class="lightbox-close">×</button>
+        <img id="lightboxImage" class="lightbox-img" src="" alt="확대 이미지">
+    </div>
+
     <script>
+        // 탭 전환 기능
         function showTab(tabId) {
             document.querySelectorAll('.tab-content').forEach(tab => tab.classList.remove('active'));
             document.querySelectorAll('nav button').forEach(btn => btn.classList.remove('nav-active'));
             document.getElementById(tabId).classList.add('active');
             document.getElementById('btn-' + tabId).classList.add('nav-active');
+            window.scrollTo({ top: 0, behavior: 'smooth' });
         }
-        // 슬라이더 및 기타 스크립트는 기존과 동일하게 유지...
-    </script>
-</body>
-</html>
-                            <p>• 백일해 예방접종 완료</p>
-                        </div>
 
-                        <p>
-                            촬영은 아이의 리듬과 호흡에 맞춰 천천히 진행됩니다.
-                        </p>
-                    </div>
-                </div>
-            </div>
+        // 슬라이더 스크롤 기능
+        function scrollSlider(button, direction) {
+            const slider = button.parentElement.querySelector('.portfolio-slider');
+            const scrollAmount = slider.clientWidth * 0.8;
+            slider.scrollBy({ left: direction * scrollAmount, behavior: 'smooth' });
+        }
 
-            <!-- Process -->
-            <div id="process" class="tab-content space-y-4">
-                <div class="soft-card p-5 flex items-start gap-4">
-                    <span class="text-[22px] font-extrabold text-[var(--sage-dark)] leading-none">01</span>
-                    <div>
-                        <h3 class="font-bold text-[14px] mb-2">Time Guide</h3>
-                        <div class="text-[12px] text-gray-600 leading-relaxed space-y-1">
-                            <p>• 소풍 스냅: 약 60분</p>
-                            <p>• 가족 야외스냅: 약 1시간 ~ 1시간 30분</p>
-                            <p>• 홈스냅: 약 1시간 ~ 1시간 30분</p>
-                            <p>• Home, Sweet Baby: 약 60분</p>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="soft-card p-5 flex items-start gap-4">
-                    <span class="text-[22px] font-extrabold text-[var(--sage-dark)] leading-none">02</span>
-                    <div>
-                        <h3 class="font-bold text-[14px] mb-1">Photo Data</h3>
-                        <p class="text-[12px] text-gray-600 leading-relaxed">
-                            눈 감거나 초점이 맞지 않은 컷을 제외한 원본 전체는 JPG로 <strong class="text-[var(--sage-dark)]">3일 이내</strong> 전달드립니다.
-                        </p>
-                    </div>
-                </div>
-
-                <div class="soft-card p-5 flex items-start gap-4">
-                    <span class="text-[22px] font-extrabold text-[var(--sage-dark)] leading-none">03</span>
-                    <div>
-                        <h3 class="font-bold text-[14px] mb-2">Final Edit</h3>
-                        <div class="text-[12px] text-gray-600 leading-relaxed space-y-2">
-                            <p>보정본은 셀렉 완료 후 <strong class="text-[var(--sage-dark)]">10일 이내</strong> 전달드립니다.</p>
-                            <p>최종 사진은 <strong class="text-[var(--sage-dark)]">네이버 공유 링크</strong>로 전달됩니다.</p>
-                            <p>전달된 사진은 <strong class="text-[var(--sage-dark)]">1개월간 보관</strong>되며, 이후에는 삭제됩니다.</p>
-                            <p class="font-medium text-gray-800">원활한 보관을 위해 기한 내 반드시 저장 부탁드립니다.</p>
-                        </div>
-                    </div>
-                </div>
-            </div>
-
-            <!-- Policy -->
-            <div id="policy" class="tab-content space-y-5">
-                <div class="soft-card p-5">
-                    <h3 class="font-bold text-[14px] text-[var(--sage-dark)] mb-3">예약 및 환불</h3>
-                    <div class="text-[12px] space-y-2 text-gray-600">
-                        <p>• 예약금 50,000원 입금 순으로 예약이 확정됩니다.</p>
-                        <p>• 촬영일 10일 전까지 취소 시 예약금 전액 환불 가능합니다.</p>
-                        <p>• 촬영일 9일 전부터 4일 전까지 취소 시 예약금 50% 환불 가능합니다.</p>
-                        <p>• 촬영일 3일 전부터 당일까지 취소 시 예약금 환불 불가합니다.</p>
-                    </div>
-                </div>
-
-                <div class="soft-card p-5">
-                    <h3 class="font-bold text-[14px] text-[var(--sage-dark)] mb-3">날짜 변경</h3>
-                    <div class="text-[12px] space-y-2 text-gray-600">
-                        <p>• 우천 시 야외 촬영은 무료 1회 날짜 변경 가능합니다.</p>
-                        <p>• 개인 사정에 의한 변경은 촬영일 기준 2주 전까지 1회 가능합니다.</p>
-                        <p>• 이후 변경은 제한되거나 추가금이 발생할 수 있습니다.</p>
-                    </div>
-                </div>
-
-                <div class="soft-card p-5">
-                    <h3 class="font-bold text-[14px] text-[var(--sage-dark)] mb-3">촬영 유의사항</h3>
-                    <div class="text-[12px] space-y-2 text-gray-600">
-                        <p>• 지각 시에도 예약된 시간 기준으로 촬영이 진행됩니다.</p>
-                        <p>• 노쇼 시 예약금은 환불되지 않습니다.</p>
-                        <p>• 문의는 예약 페이지를 통해 남겨주시면 순차적으로 답변드립니다.</p>
-                    </div>
-                </div>
-            </div>
-
-            <!-- Edit -->
-            <div id="edit" class="tab-content">
-                <div class="flex justify-center mb-5">
-                    <img src="6.png" alt="Wonchae Snap Logo" class="w-28 h-28 object-contain logo-tint">
-                </div>
-
-                <div class="text-center mb-5">
-                    <p class="text-[11px] tracking-[0.28em] uppercase text-[var(--sage-dark)] font-bold mb-2">Edit Philosophy</p>
-                    <h3 class="text-[24px] font-extrabold text-gray-900 tracking-[-0.02em] leading-snug">
-                        나답지만,<br>가장 아름답게
-                    </h3>
-                </div>
-
-                <div class="soft-card p-5 space-y-4 text-[12px] leading-[1.9] text-gray-600">
-                    <p>
-                        원채스냅은 피부 톤과 전체적인 분위기를 자연스럽게 정리하며,
-                        본래의 인상을 해치지 않는 보정을 지향합니다.
-                    </p>
-
-                    <div class="mini-card p-4">
-                        <p class="font-bold text-[var(--sage-dark)] mb-1">아이 보정</p>
-                        <p>
-                            태열, 침독 등 일시적인 피부 트러블 등을 정돈합니다.
-                        </p>
-                    </div>
-
-                    <div class="mini-card p-4">
-                        <p class="font-bold text-[var(--sage-dark)] mb-1">기본 피부 보정</p>
-                        <p>
-                            전체적인 피부 톤과 컨디션을 해치지 않는 선에서
-                            자연스럽게 정돈하는 보정은 가능합니다.
-                        </p>
-                    </div>
-
-                    <div class="mini-card p-4">
-                        <p class="font-bold text-[var(--sage-dark)] mb-2">진행하지 않는 보정</p>
-                        <ul class="list-disc pl-5 space-y-1">
-                            <li>얼굴 형태 수정</li>
-                            <li>눈 비대칭, 입꼬리 대칭 등 형태 교정</li>
-                            <li>표정 변경</li>
-                            <li>안경 빛 반사 제거</li>
-                            <li>합성 및 현실 왜곡에 가까운 보정</li>
-                            <li>배경 정리 및 배경 합성</li>
-                        </ul>
-                    </div>
-
-                    <p class="text-center text-gray-800 font-medium pt-1">
-                        가장 나다운 순간이 가장 오래 남는다고 믿습니다.
-                    </p>
-                </div>
-            </div>
-        </div>
-
-        <!-- Footer -->
-        <div class="bg-[#FAFBFC] p-6 px-8 text-center border-t border-[var(--line)]">
-            <p class="text-center text-[12px] text-[var(--sage-dark)] font-bold mb-3 leading-relaxed">
-                아기의 컨디션과 계절감을 고려해 여유 있게 예약해주세요.
-            </p>
-
-            <div class="footer-buttons">
-                <a href="https://pf.kakao.com/_GhZEX" target="_blank"
-                   class="block w-full bg-[var(--sage)] hover:bg-[var(--sage-dark)] text-white py-4 rounded-2xl font-bold text-[14px] shadow-lg transition-all duration-200">
-                    카톡 예약 문의하기
-                </a>
-
-                <a href="https://www.instagram.com/itswonchae/" target="_blank"
-                   class="footer-secondary-btn">
-                    인스타그램 바로가기
-                </a>
-            </div>
-        </div>
-    </div>
-
-    <!-- Lightbox -->
-    <div id="lightbox" class="lightbox" onclick="closeLightbox(event)">
-        <div class="lightbox-inner">
-            <button class="lightbox-close" onclick="closeLightbox(event)" aria-label="닫기">×</button>
-            <button class="lightbox-nav lightbox-prev" onclick="showPrevImage(event)" aria-label="이전 이미지">‹</button>
-            <img id="lightboxImage" class="lightbox-img" src="" alt="">
-            <button class="lightbox-nav lightbox-next" onclick="showNextImage(event)" aria-label="다음 이미지">›</button>
-        </div>
-    </div>
-
-    <script>
+        // 라이트박스 기능
         const galleries = {
-            picnic: [
-                'picnic1.jpg',
-                'picnic2.jpg',
-                'picnic3.jpg',
-                'picnic4.jpg',
-                'picnic5.jpg',
-                'picnic6.jpg'
-            ],
-            home: [
-                'home1.jpg',
-                'home2.jpg',
-                'home3.jpg',
-                'home4.jpg',
-                'home5.jpg'
-            ],
-            baby: [
-                'baby1.jpg',
-                'baby2.jpg',
-                'baby3.jpg',
-                'baby4.jpg',
-                'baby5.jpg',
-                'baby6.jpg'
-            ]
+            picnic: ['picnic1.jpg', 'picnic2.jpg', 'picnic3.jpg', 'picnic4.jpg']
         };
 
-        let currentGallery = null;
-        let currentIndex = 0;
-
-        function showTab(tabId) {
-            document.querySelectorAll('.tab-content').forEach(tab => tab.classList.remove('active'));
-            document.querySelectorAll('nav button').forEach(btn => btn.classList.remove('nav-active'));
-            document.getElementById(tabId).classList.add('active');
-            document.getElementById('btn-' + tabId).classList.add('nav-active');
-        }
-
-        function handleLogoError(img, colorType) {
-            const container = img.parentElement;
-            let iconColor = colorType === 'white' ? 'rgba(255,255,255,0.65)' : '#8FA2B5';
-            let bgClass = colorType === 'white' ? '' : 'bg-[var(--sage-light)] rounded-full';
-
-            container.innerHTML = `
-                <div class="w-16 h-16 ${bgClass} flex items-center justify-center">
-                    <svg class="w-10 h-10" style="color: ${iconColor}" fill="currentColor" viewBox="0 0 24 24">
-                        <path d="M12 15.5a3.5 3.5 0 100-7 3.5 3.5 0 000 7z"/>
-                        <path fill-rule="evenodd" d="M4.5 7.5a3 3 0 013-3h9a3 3 0 013 3v9a3 3 0 01-3 3h-9a3 3 0 01-3-3v-9zM12 7a4.5 4.5 0 100 9 4.5 4.5 0 000-9z" clip-rule="evenodd"/>
-                    </svg>
-                </div>
-            `;
-        }
-
-        function openLightbox(galleryName, index) {
-            currentGallery = galleryName;
-            currentIndex = index;
-            updateLightboxImage();
-
-            const lightbox = document.getElementById('lightbox');
-            lightbox.classList.add('active');
+        function openLightbox(gallery, index) {
+            const imgUrl = galleries[gallery][index];
+            document.getElementById('lightboxImage').src = imgUrl;
+            document.getElementById('lightbox').classList.add('active');
             document.body.style.overflow = 'hidden';
         }
 
-        function updateLightboxImage() {
-            const lightboxImage = document.getElementById('lightboxImage');
-            lightboxImage.src = galleries[currentGallery][currentIndex];
-            lightboxImage.alt = `${currentGallery} image ${currentIndex + 1}`;
+        function closeLightbox() {
+            document.getElementById('lightbox').classList.remove('active');
+            document.body.style.overflow = '';
         }
 
-        function showPrevImage(event) {
-            event.stopPropagation();
-            if (!currentGallery) return;
-            const images = galleries[currentGallery];
-            currentIndex = (currentIndex - 1 + images.length) % images.length;
-            updateLightboxImage();
-        }
-
-        function showNextImage(event) {
-            event.stopPropagation();
-            if (!currentGallery) return;
-            const images = galleries[currentGallery];
-            currentIndex = (currentIndex + 1) % images.length;
-            updateLightboxImage();
-        }
-
-        function closeLightbox(event) {
-            if (
-                event.target.id === 'lightbox' ||
-                event.target.classList.contains('lightbox-close')
-            ) {
-                document.getElementById('lightbox').classList.remove('active');
-                document.getElementById('lightboxImage').src = '';
-                document.body.style.overflow = '';
-            }
-        }
-
-        function scrollSlider(button, direction) {
-            const slider = button.parentElement.querySelector('.portfolio-slider');
-            const firstImage = slider.querySelector('img');
-            if (!firstImage) return;
-
-            const gap = window.innerWidth <= 640 ? 8 : 10;
-            const scrollAmount = (firstImage.clientWidth + gap) * 3;
-            slider.scrollBy({
-                left: direction * scrollAmount,
-                behavior: 'smooth'
-            });
-        }
-
-        function initPortfolioDrag() {
-            const sliders = document.querySelectorAll('.portfolio-slider');
-
-            sliders.forEach((slider) => {
-                let isDown = false;
-                let startX = 0;
-                let scrollLeft = 0;
-                let moved = false;
-
-                slider.addEventListener('mousedown', (e) => {
-                    isDown = true;
-                    moved = false;
-                    slider.classList.add('dragging');
-                    startX = e.pageX - slider.offsetLeft;
-                    scrollLeft = slider.scrollLeft;
-                });
-
-                slider.addEventListener('mouseleave', () => {
-                    isDown = false;
-                    slider.classList.remove('dragging');
-                });
-
-                slider.addEventListener('mouseup', () => {
-                    isDown = false;
-                    slider.classList.remove('dragging');
-                });
-
-                slider.addEventListener('mousemove', (e) => {
-                    if (!isDown) return;
-                    e.preventDefault();
-                    moved = true;
-                    const x = e.pageX - slider.offsetLeft;
-                    const walk = (x - startX) * 1.2;
-                    slider.scrollLeft = scrollLeft - walk;
-                });
-
-                let touchStartX = 0;
-                let touchScrollLeft = 0;
-
-                slider.addEventListener('touchstart', (e) => {
-                    touchStartX = e.touches[0].pageX;
-                    touchScrollLeft = slider.scrollLeft;
-                }, { passive: true });
-
-                slider.addEventListener('touchmove', (e) => {
-                    const x = e.touches[0].pageX;
-                    const walk = (x - touchStartX) * 1.1;
-                    slider.scrollLeft = touchScrollLeft - walk;
-                }, { passive: true });
-
-                slider.querySelectorAll('img').forEach((img) => {
-                    img.addEventListener('click', (e) => {
-                        if (moved) {
-                            e.preventDefault();
-                            e.stopPropagation();
-                            moved = false;
-                        }
-                    });
-                });
-            });
-        }
-
-        document.addEventListener('keydown', function(event) {
-            const lightbox = document.getElementById('lightbox');
-            const isOpen = lightbox.classList.contains('active');
-
-            if (event.key === 'Escape' && isOpen) {
-                lightbox.classList.remove('active');
-                document.getElementById('lightboxImage').src = '';
-                document.body.style.overflow = '';
-            }
-
-            if (event.key === 'ArrowLeft' && isOpen) {
-                currentIndex = (currentIndex - 1 + galleries[currentGallery].length) % galleries[currentGallery].length;
-                updateLightboxImage();
-            }
-
-            if (event.key === 'ArrowRight' && isOpen) {
-                currentIndex = (currentIndex + 1) % galleries[currentGallery].length;
-                updateLightboxImage();
+        // 로고 이미지 로딩 실패 시 처리
+        window.addEventListener('load', () => {
+            const logo = document.querySelector('header img, .bg-[var(--sage)] img');
+            if (logo && logo.naturalWidth === 0) {
+                document.getElementById('logo-fallback').style.display = 'block';
             }
         });
-
-        initPortfolioDrag();
     </script>
 </body>
 </html>
